@@ -1,0 +1,186 @@
+/* common style for backend */
+div#dataTable_info {
+    display: none;
+}
+
+/*Style for create Admin User*/
+.create-user {
+    padding: 20px;
+}
+.btn-save {
+    margin-left: 30px;
+}
+.btn-create {
+    width: 100px;
+}
+.padding-top-none {
+    padding-top: 0px !important;
+}
+.underline {
+    text-decoration: underline;
+}
+.w-100 {
+    min-width: 100px;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.profile-customer .form-horizontal .control-label {
+    text-align: left;
+}
+.profile-customer h1 {
+    margin-bottom: 30px;
+}
+.box-add-communication {
+    text-align: right;
+    margin-top: 20px;
+}
+td.error {
+    background: #FFDEDE;
+    cursor: pointer;
+}
+
+.content-wrapper>section {
+    margin: 0px 20px;
+}
+
+.content-wrapper>section.content-header{
+    padding-left: 0px;
+}
+.dashboard-promotions .dataTables_info,
+.product_table .dataTables_info{
+    display: none;
+}
+.dashboard-promotions small{
+    font-size: 13px;
+}
+.toggle-header {
+    position: relative;
+}
+.img-header {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    position: absolute;
+    left: -25px;
+    top: 10px;
+}
+.ui-autocomplete { position: absolute; cursor: default; background:#CCC }
+
+/* workarounds */
+html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+.ui-menu {
+    list-style:none;
+    padding: 2px;
+    margin: 0;
+    display:block;
+    float: left;
+}
+.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+.ui-menu .ui-menu-item a {
+    text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+    zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+}
+.ic-add-user {
+    margin-top: 5px;
+}
+.modal-body-customer #assetForm {
+    margin-top: 10px;
+}
+.box-add {
+    padding: 20px;
+    border: 1px solid #A7A3A3;
+    margin-bottom: 20px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+
+#themeFieldDetail .dataTables_info,
+#themeFieldDetail .dataTables_empty{
+    display: none;
+}
+.mt40 {
+    margin-top: 40px;
+}
+.img-avatar {
+    background: transparent;
+    border: none;
+}
+.img-avatar img {
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    border: 1px solid #ddd;
+    height: 120px;
+    width: 120px;
+}
+.box-theme-field {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+}
+.pointer {
+    cursor: pointer;
+}
+.remove-field {
+    padding-top: 3px;
+}
+.bootstrap-tagsinput {
+    width: 100%;
+    border-radius: 0px !important;
+    padding: 5px 12px !important;
+}
+.tag {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.color-1 {
+    color: green;
+}
+.color-2 {
+    color: #ff0000;
+}
+.color-3 {
+    color: #9b7501;
+}
+.color-4 {
+    color: #ea00e7;
+}
+.color-5 {
+    color: #feb900;
+}
+.color-6 {
+    color: #0030fe;
+}
+.pricing-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #F5F5F5;
+}
+
+.pricing-form .form-group {
+    border-bottom: 1px solid #E4E4E4;
+    padding-bottom: 15px;
+}
+.pricing-form .form-group:last-child {
+    border-bottom: none;
+}

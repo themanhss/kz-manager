@@ -1,0 +1,12 @@
+/*Css for login page*/
+.login-btn {
+    float: none;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+.underline {
+    text-decoration: underline;
+}
+.center {
+    text-align: center;
+}

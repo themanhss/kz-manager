@@ -1,0 +1,17 @@
+{
+	"module-name": "content",	
+	"field-definition":[{
+		"name":"title",
+		"type":"varchar"
+	},{
+		"name":"description",
+		"type":"text"
+	}],
+	"relation-module":[{
+		"name":"category",
+		"relation-field":"name"
+	},{
+		"name":"users",
+		"relation-field":"fullname"
+	}]
+}	

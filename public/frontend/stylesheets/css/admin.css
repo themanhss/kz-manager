@@ -1,0 +1,4 @@
+/* WP-Engine take snapshot of live and overwrite staging */
+#staging button[name=snapshot]{
+	display: none;                     /* Hide this button. We never use it */
+}

@@ -1,0 +1,2057 @@
+body
+  margin: 0px
+  padding: 0px !important
+  width: 100%
+
+#page
+  width: 100%
+  font-family: 'poppinslight'
+  font-size: 20px
+  line-height: 1.2
+  letter-spacing: 1.4px
+  color: #2d2d2d
+  background: #fff
+  overflow: hidden
+
+.clearfix:before, .clearfix:after
+  content: ""
+  display: table
+
+.clearfix
+  &:after
+    clear: both
+
+.clearfix
+  zoom: 1
+
+.site-content
+  width: 1064px
+  margin: 0px auto
+
+h1, h2, h3, h4, h5, h6
+  margin: 0px
+
+h2, h3
+  font-family: "metromedium_lt_tworegular"
+  text-transform: uppercase
+  text-align: center
+  line-height: 1
+  font-weight: normal
+
+h2
+  font-size: 42px
+
+h5
+  font-family: "poppinsmedium"
+  font-size: 22px
+  line-height: 1.8
+  font-weight: normal
+
+.text-box
+  text-align: center
+  margin: 0px auto
+
+.toyota .hide-tow-bar
+  display: block
+
+.hide-tow-bar
+  display: none
+
+p
+  margin: 0px 0px 20px
+
+a, input, button, select, textarea
+  cursor: pointer
+  outline: none
+  border: none
+
+a
+  text-decoration: none
+
+.call-button
+  display: block
+  font-family: "poppinsmedium"
+  letter-spacing: 3px
+  font-size: 16px
+
+  a, .a
+    background: #5cb8c9
+    display: inline-block
+    color: #fff
+    cursor: pointer
+
+    &.padded
+      padding: 12px 20px
+
+    &:hover
+      background: #008fac
+ul
+  list-style-type: none
+  padding: 0px
+
+/* HEADER */
+
+#top-nav-toggle
+  background: #004d80
+  width: 22px
+  height: 28px
+  vertical-align: top
+  padding: 6px 5px 0
+  cursor: pointer
+  display: none
+
+#header
+  position: fixed
+  padding: 10px 0px 0px
+  top: 0
+  left: 0
+  right: 0
+  z-index: 1000
+  background: #fff
+  transition: all 300ms linear
+
+  #logo
+    float: left
+
+    a
+      display: block
+
+      img
+        vertical-align: middle
+
+  .right-side
+    float: right
+    text-transform: uppercase
+    font-size: 14px
+    font-family: "poppinsmedium"
+
+    .enquire-popup
+      font-family: "metromedium_lt_tworegular"
+      text-align: right
+      display: block
+      margin: 10px 0px 15px
+
+      a
+        color: #004d80
+
+        &:hover
+          color: #5cb8c9
+
+    .sticky-enquiry
+      display: none
+      margin-left: 15px
+      background: #5c9dad
+      color: #fff
+      padding: 8px
+
+    .sticky-call
+      display: none
+      color: #004d80
+      margin-left: 5px
+      font-family: 'metromedium_lt_tworegular'
+      font-size: 14px
+
+      &:hover
+        color: #5c9dad
+
+    .top-navigation
+      letter-spacing: 1px
+      margin: 0px
+
+      li
+        display: inline-block
+        margin-right: 15px
+        padding-bottom: 15px
+        cursor: pointer
+
+        &:last-child
+          margin-right: 0px
+
+        a
+          color: #000
+
+        &:hover
+          a
+            color: #5cb8c9
+
+      .has-submenu
+        border-bottom: 3px solid transparent
+        position: relative
+
+        .sub-menu-wrapper
+          display: none
+          position: absolute
+          top: 100%
+          left: 0
+          margin-top: 3px
+          width: 270px
+          background: #fff
+          z-index: 10
+
+          -webkit-box-shadow: 0px 0px 5px 1px rgba(197,209,214,1)
+          -moz-box-shadow: 0px 0px 5px 1px rgba(197,209,214,1)
+          box-shadow: 0px 0px 5px 1px rgba(197,209,214,1)
+
+          .sub-menu
+            white-space: nowrap
+            padding: 25px
+            text-align: left
+
+            li
+              display: block
+              margin-bottom: 20px
+              padding-bottom: 0px
+
+              &:last-of-type
+                margin-bottom: 0px
+
+              a
+                color: #000
+
+                &:hover
+                  color: #5cb8c9
+        &:hover
+          border-bottom: 3px solid #004d80
+          color: #5cb8c9
+
+          .sub-menu-wrapper
+            display: block
+
+body.sticky-nav
+  #header
+    padding: 0px
+
+    .promo-2-header
+      width: 1145px
+
+    #logo
+      display: none
+
+    .right-side
+      float: none
+      text-align: center
+
+      .sticky-enquiry,
+      .sticky-call
+        display: inline-block
+
+      .top-navigation
+        display: inline-block
+        li
+          padding-top: 18px
+
+          .hide
+            display: none
+
+    .enquire-popup
+      display: none
+
+/* HOME Promo 2 */
+/* HOME */
+.large-width
+  width: 1280px
+  margin: 0px auto
+
+.promotion-index
+  .slide
+    .text-content
+      .slide-title
+        letter-spacing: 5px
+
+      .end-offer
+        letter-spacing: 3px
+
+.top-banner,
+.promotion-index
+  width: 100%
+  .slide
+    background-size: cover
+    height: 100%
+    text-transform: uppercase
+    font-family: "poppinsmedium"
+    position: relative
+
+  .slide
+    .text-content
+      font-weight: normal
+      padding-top: 80px
+
+      .slide-title
+        font-family: "metroblack_lt_tworegular"
+        font-size: 58px
+        margin-bottom: 25px
+
+      .end-offer
+        font-family: "metroblack_lt_tworegular"
+        font-size: 24px
+        display: block
+        margin-bottom: 25px
+
+      .call-button
+        display: inline-block
+        font-family: "poppinsregular"
+        font-size: 18px
+
+        a
+          padding: 15px 25px
+
+    .note
+      display: block
+      position: absolute
+      left: 50%
+      bottom: 18px
+      z-index: 5
+      color: #fff
+      text-transform: none
+      font-family: "poppinsregular"
+      font-size: 16px
+
+.top-banner
+  height: 570px
+  padding-top: 85px
+
+  .slide
+    background: url("../../images/home-promo-1-banner.jpg") top center no-repeat
+    text-align: left
+
+    .note
+      margin-left: -455px
+
+.promotion-index
+  height: 570px
+  padding-top: 85px
+
+  .slide
+    background: url("../../images/commodore_bannerimage_new2.jpg?t=1234") top center no-repeat
+    text-align: left
+    color: #fff
+
+    .note
+      margin-left: -332px
+
+.our-range
+  background: #8aa2ac
+  padding: 45px 0px 25px
+  text-align: center
+
+  h2
+    color: #fff
+    margin-bottom: 20px
+
+  .car-item
+    width: 240px
+    display: inline-block
+    margin-right: 25px
+    box-sizing: border-box
+    overflow: hidden
+    text-align: center
+    font-size: 18px
+    letter-spacing: 1px
+
+    box-shadow: 0 3px 20px 5px #7d96a1
+    -webkit-box-shadow: 0 3px 20px 5px #7d96a1
+    -moz-box-shadow: 0 3px 20px 5px #7d96a1
+    -o-box-shadow: 0 3px 20px 5px #7d96a1
+
+    &:last-of-type
+      margin-right: 0px
+
+    ul
+      margin: 0px
+
+    .top-part
+      padding: 10px 20px 25px
+      background: #fff
+
+      .item-img
+        width: 100%
+
+        a
+          color: #000
+
+          &:hover
+            color: #0089a6
+
+          img
+            width: 100%
+
+      .item-info
+
+        .item-name
+          font-family: "metromedium_lt_tworegular"
+          text-transform: uppercase
+          margin-bottom: 15px
+
+          a
+            color: #000
+
+            &:hover
+              color: #0089a6
+
+        .save
+          margin-bottom: 10px
+
+        .crossed
+          text-decoration: line-through
+
+        .offer,
+        .motto
+          font-family: "poppinsmedium"
+
+
+    .btm-part
+      background: #008fac
+      padding: 25px 20px 30px
+      position: relative
+
+      &:before
+        content: ""
+        position: absolute
+        top: -10px
+        left: 50%
+        margin-left: -24px
+        background: url("../../images/aqua-arrow.jpg") center no-repeat
+        width: 47px
+        height: 11px
+
+      .item-details
+        color: #fff
+        font-family: "poppinsregular"
+        font-size: 16px
+        line-height: 1.4
+
+        .line
+          a
+            color: #66bccd
+            font-family: 'poppinslight'
+            font-size: 18px
+
+            &:hover
+              color: #008fac
+
+        .line:last-of-type
+          margin-top: 25px
+          font-size: 14px
+
+        .more
+          background: #66bccd
+          padding: 8px 30px
+          color: #fff !important
+          font-family: "poppinsregular" !important
+          font-size: 14px !important
+          letter-spacing: 1px
+
+          &:hover
+            background: #8aa2ac
+
+  .other-cars-item
+    .top-part
+      padding-bottom: 0px
+
+      .item-img
+        padding: 30px 0px
+
+        img
+          vertical-align: top
+          width: 100%
+
+      .item-info
+        margin-bottom: 20px
+
+        .item-name
+          margin-bottom: 48px
+
+          &.margin
+            margin-bottom: 66px
+
+        .save
+          margin-bottom: 5px
+
+    .btm-part
+      margin-top: -25px
+      padding: 0px 20px 30px
+      background: #fff
+
+      &:before
+        display: none
+
+      .item-details
+
+        .line:last-of-type
+          margin-top: 75px
+
+  .our-range-note
+    color: #fff
+    font-family: "poppinsregular"
+    font-size: 16px
+    display: block
+    margin-top: 25px
+
+  .margin-bottom
+    margin-bottom: 25px
+
+.compare
+  padding: 75px 0px 50px
+
+  .site-content
+    width: 830px
+
+    &.large-width
+      width: 1280px
+      text-align: center
+      .right
+        width: 900px
+      .row
+        text-align: center
+        .ute-item
+          vertical-align: top
+
+    h2
+      margin-bottom: 45px
+
+    .left
+      font-family: "poppinsregular"
+      font-size: 14px
+      margin-right: 40px
+      display: inline-block
+      vertical-align: top
+      padding-top: 25px
+
+      .row
+        margin-bottom: 25px
+
+        .label
+          display: block
+          text-transform: uppercase
+          margin-bottom: 5px
+
+        .options
+          border: 1px solid #008fac
+          width: 260px
+          text-align: center
+          box-sizing: border-box
+          overflow: hidden
+
+          .option
+            float: left
+            width: 50%
+            display: inline-block
+            box-sizing: border-box
+            border-right: 1px solid #008fac
+            padding: 7px
+            color: #008fac
+            cursor: pointer
+
+            .option-inside
+              display: inline-block
+              vertical-align: middle
+              line-height: 1.2
+              width: 100%
+
+            &:last-of-type
+              border-right: none
+
+          .active
+            background: #008fac
+            color: #fff
+          .is-single
+            cursor: text
+
+    .right
+      width: 520px
+      display: inline-block
+      vertical-align: top
+
+      .ute-item
+        display: inline-block
+        width: 256px
+        text-align: center
+        margin-bottom: 15px
+
+        .ute-img
+          a
+            display: block
+
+        .ute-name, .ute-price
+          display: block
+
+        .ute-name
+          font-family: "metromedium_lt_tworegular"
+          text-transform: uppercase
+          letter-spacing: normal
+          font-size: 21px
+
+        .ute-price
+          font-family: "poppinslight"
+          font-size: 24px
+          position: relative
+
+          .decimals
+            font-size: 12px
+            position: absolute
+            top: 0px
+            right: 50px
+
+      .other-utes-items
+        .subtitle
+          display: block
+          font-family: 'metromedium_lt_tworegular'
+          font-size: 18px
+          margin: 20px auto 10px
+          padding-top: 10px
+          border-top: 1px solid #606060
+          max-width: 330px
+          text-align: center
+
+        .no-image
+          text-align: center
+
+          img
+            -moz-transform: scaleX(-1)
+            -o-transform: scaleX(-1)
+            -webkit-transform: scaleX(-1)
+            transform: scaleX(-1)
+            filter: FlipH
+            -ms-filter: "FlipH"
+
+
+        .ute-item
+          .ute-img
+            display: none
+
+          .ute-name
+            font-size: 18px
+
+          .ute-price
+            font-size: 21px
+
+.the-offer
+  background: #f9fafa
+  padding: 50px 0px 60px
+
+  .logo
+    display: block
+    margin: 0px auto 30px
+    text-align: center
+
+  h2
+    margin-bottom: 40px
+
+  .text-box
+    width: 860px
+    font-size: 22px
+
+  .car-logo
+    background: url("../../images/car-icon.png") center no-repeat
+    background-size: 100% 100%
+    display: block
+    margin: 55px auto 0px
+    width: 217px
+    height: 84px
+
+  .promotion-car-logo
+    background: url("../../images/promotion-car-logo.png") center no-repeat
+
+
+  .call-button
+    text-align: center
+    margin: 60px 0px 30px
+
+    a
+      padding: 10px 25px
+
+.request-callback
+  background: #8199a3
+  margin: 0px auto
+  padding: 70px 0px 35px
+  text-align: center
+  color: #fff
+
+  h2
+    margin-bottom: 25px
+
+  .text-box
+    width: 820px
+    margin: 0px auto 40px
+    font-size: 20px
+
+  .call-button
+    display: inline-block
+    text-transform: uppercase
+    margin-bottom: 40px
+    font-family: "poppinsregular"
+
+    a
+      padding: 12px 22px
+
+  .tools-icon
+    display: block
+    background: url("../../images/tools-icon.png") center no-repeat
+    width: 95px
+    height: 72px
+    margin: 0px auto
+
+.insurance-brands
+  background: #e7e8e9
+  text-align: center
+  padding: 70px 0px 35px
+
+  .intro
+    margin: 0px auto 30px
+    width: 845px
+    font-size: 18px
+
+  h2, h3
+    margin-bottom: 25px
+
+  h3
+    font-family: "metromedium_lt_tworegular"
+    font-size: 24px
+    font-weight: normal
+
+.brands
+  .brand-col
+    width: 22%
+    display: inline-block
+    vertical-align: top
+    font-size: 12px
+
+    &:first-of-type
+      .brand-picture
+        border-right: 1px solid #5a5a5b
+
+    .brand-picture
+      min-height: 118px
+      line-height: 118px
+      margin-bottom: 10px
+
+      a
+        display: block
+
+        img
+          margin: 0px auto
+          vertical-align: middle
+
+    .brand-description
+      width: 175px
+      display: block
+      margin: 0px auto
+
+#call-us-banner
+  text-align: center
+  background: #008fac
+  color: #fff
+  padding: 50px 0px 30px
+
+  .content
+    margin: 0px 20px
+
+    h3
+      font-size: 28px
+      margin-bottom: 15px
+
+    h4
+      font-family: "poppinsmedium"
+      font-size: 24px
+      font-weight: normal
+
+      a
+        color: #fff
+
+        &:hover
+          color: #004d80
+
+    .call-us-note
+      font-family: "poppinsregular"
+      font-size: 12px
+
+/* PRESENTATION PAGE */
+/* Ute Page */
+
+.ute-page
+  .ute-page-banner
+    height: auto
+
+    .content .text-content
+      text-align: center
+      color: #0089a6
+
+      .title, .slogan
+        background: none
+
+    .land-cruiser,
+    .prado,
+    .kluger,
+    .toyota,
+    .mitsubishi
+      background: none
+
+
+.ute-page-banner
+  width: 100%
+  height: 570px
+  padding-top: 85px
+
+  .mitsubishi
+    background: url("../../images/triton-banner.jpg") center center no-repeat
+
+  .holden
+    background: url("../../images/holden-colorado-banner.jpg") center center no-repeat
+
+  .ford
+    background: url("../../images/ford-ranger-banner.jpg") center center no-repeat
+
+  .toyota
+    background: url("../../images/toyota-hilux-banner.jpg") center center no-repeat
+
+  .cherokee
+    background: url("../../images/cherokee-banner.jpg") center center no-repeat
+
+  .commodore
+    background: url("../../images/commodore-banner.jpg") center center no-repeat
+
+  .kluger
+    background: url("../../images/triton-banner.jpg") center center no-repeat
+
+  .land-cruiser
+    background: url("../../images/land-cruiser-banner-img.jpg") center center no-repeat
+
+  .prado
+    background: url("../../images/prado-banner.jpg") center center no-repeat
+
+  .content
+    background-size: cover
+    height: 100%
+
+    .text-content
+      padding-top: 60px
+      color: #fff
+      text-transform: uppercase
+      text-align: right
+
+      .title,
+      .slogan
+        font-family: "metroblack_lt_tworegular"
+        background: #0089a6
+        display: inline-block
+        line-height: 1.2
+
+      .title
+        font-size: 50px
+        padding: 20px 25px 0px
+
+      .slogan
+        font-size: 30px
+        margin-bottom: 35px
+        padding: 15px 25px
+
+      .call-button
+        a
+          padding: 15px 25px
+
+  .holden,
+  .ford
+    .text-content
+      text-align: left
+
+.specifications
+  .intro
+    padding: 75px 0px 130px
+    background: #008fac
+    color: #fff
+
+    h2
+      margin-bottom: 30px
+
+    .text-box
+      width: 840px
+
+  .specs-details
+    background: #f9f9fa
+    font-size: 18px
+
+    .ute-illustration
+      text-align: center
+
+      img
+        margin-top: -70px
+
+    .details-list
+      padding-bottom: 30px
+
+      .item
+        display: inline-block
+        width: 260px
+        text-align: center
+        margin-bottom: 25px
+
+        .ute-atribute,
+        .value
+          display: block
+
+        .ute-atribute
+          font-family: "poppinsmedium"
+          line-height: 1.6
+          color: #0083a0
+
+        .value
+          font-family: "poppinslight"
+          line-height: 1.6
+          letter-spacing: normal
+
+.specifications-chart
+  border-top: 1px solid #3a3a3a
+  padding: 15px 0px 50px
+  width: 840px
+  margin: 0px auto
+  font-family: "poppinslight"
+  font-size: 18px
+  text-align: center
+
+  p
+    margin-bottom: 20px
+
+  .view-button
+    font-family: "poppinslight"
+    line-height: 1
+    font-size: 16px
+    letter-spacing: 2px
+    color: #fff
+    background: #5cabbb
+    padding: 10px 30px
+
+    &:hover
+      background: #0083a0
+
+.promotion-chart
+  padding: 35px 0px 60px
+  border-top: 0px
+  background: #8aa2ac
+  color: #fff
+  width: 100%
+  font-family: 'poppinslight'
+
+  .title,
+  .info
+    display: block
+
+  .title
+    display: block
+    width: 845px
+    border-top: 1px solid #fff
+    font-size: 22px
+    padding-top: 30px
+    margin: 0px auto 10px
+
+  .info
+    margin: 0px auto 25px
+    font-size: 18px
+    max-width: 540px
+
+  .view-button
+    letter-spacing: 3px
+    background: #5d9dae
+
+    &:hover
+      background: #008fac
+
+.photo-gallery
+  width: 100%
+  height: 648px
+  position: relative
+  top: 0
+  bottom: 0
+  width: auto
+
+  .content
+    position: absolute
+    bottom: 10px
+    left: 50%
+    margin-left: -243px
+    text-align: center
+
+  .pg-note
+    color: #fff
+    text-transform: none
+    font-family: 'poppinsregular'
+    font-size: 16px
+
+  &.triton
+    background: url("../../images/triton-photo-gallery.jpg") center no-repeat
+
+  &.ford-ranger
+    background: url("../../images/ford-photo-gallery.jpg") center no-repeat
+
+  &.colorado
+    background: url("../../images/colorado-photo-gallery.jpg") center no-repeat
+
+  &.hilux
+    background: url("../../images/hilux-photo-gallery.jpg") center no-repeat
+
+  &.cherokee
+    background: url("../../images/cherokee-photo-gallery.jpg") center no-repeat
+
+  &.commodore
+    background: url("../../images/commodore-photo-gallery.jpg") center no-repeat
+
+  &.kluger
+    background: url("../../images/kluger-photo-gallery.jpg") center no-repeat
+
+  &.land-cruiser
+    background: url("../../images/land-cruiser-photo-gallery.jpg") center no-repeat
+
+  &.prado
+    background: url("../../images/prado-photo-gallery.jpg") center no-repeat
+
+.got-questions
+  background: #89a1ac
+  padding: 55px 0px
+  color: #fff
+
+  .site-content
+    width: 980px
+
+    h2
+      margin-bottom: 35px
+
+    .main-content
+      font-family: 'poppinsregular'
+      font-size: 18px
+
+      .qa-section,
+      .question-icon
+        display: inline-block
+        vertical-align: top
+
+      .qa-section
+        width: 75%
+        margin-right: 10%
+
+        a
+          color: #fff
+          display: block
+
+        .accordion-question,
+        .accordion-answer
+          span.open
+            float: right
+
+          span.close
+            display: none
+
+        .accordion-answer
+          font-family: 'poppinslight'
+          font-size: 14px
+          display: none
+          transition: all .4s linear
+          padding-left: 30px
+
+          .answer
+            padding-right: 18px
+
+.research
+  background: #80858f
+  padding: 75px 0px 10px
+  color: #fff
+
+  .site-content
+
+    h2
+      margin-bottom: 25px
+
+    .text-box
+      width: 870px
+      font-size: 18px
+      margin-bottom: 60px
+
+    .details-box
+      margin-bottom: 30px
+
+      .ute-image
+        width: 410px
+        margin-right: 20px
+
+        img
+          width: 100%
+
+      .ute-image,
+      .details-info
+        display: inline-block
+        vertical-align: top
+
+        .line
+          display: block
+          line-height: 2
+
+          strong
+            font-size: 24px
+            font-family: "poppinsmedium"
+            font-weight: normal
+
+  .specifications-chart
+    border-top: 1px solid #c0c2c7
+
+.compare.inside-page
+  padding: 45px 0px
+
+  .site-content
+    width: 760px
+
+    h2
+      margin-bottom: 25px
+
+    .left
+      padding-top: 0px
+      margin-right: 90px
+
+      .row:last-of-type
+        margin-bottom: 0px
+
+      .full-width
+        .options
+          .option
+            width: 100% !important
+
+    .right
+      vertical-align: bottom
+      width: 400px
+      font-size: 18px
+      padding-bottom: 40px
+
+      .price
+        font-family: "metrolite_lt_tworegular"
+        font-size: 36px
+        font-weight: normal
+        margin-bottom: 20px
+        display: block
+
+      .info
+        p
+          margin-bottom: 15px
+          line-height: 1.3
+
+      .save
+        display: none
+        font-family: "poppinsmedium"
+        margin-bottom: 30px
+
+      .enquiry
+        margin-right: 27px
+
+      .call-button
+        font-family: "poppinsregular"
+        font-size: 16px
+        letter-spacing: 2px
+        display: inline-block
+
+        a
+          padding: 12px 20px
+
+.compare.inside-page.toyota .site-content .right .save
+  display: block
+
+/* ABOUT */
+
+.about-intro
+  padding: 140px 0px 80px
+  background: #eceeef
+
+  h2
+    margin-bottom: 30px
+
+  .text-box
+    width: 850px
+    margin-bottom: 50px
+
+  .brands
+    margin: 0px auto
+    width: 790px
+    text-align: center
+
+    .brand-col
+      width: 228px
+      margin-right: 30px
+
+      &:first-of-type
+        .brand-picture,
+        .brand-description
+          padding-right: 25px
+
+      .brand-picture
+        min-height: 140px
+        line-height: 140px
+
+      .brand-description
+        width: 218px
+        font-size: 16px
+
+      &:last-of-type
+        margin-right: 0px
+
+.offer-description
+  padding: 55px 0px
+
+  .site-content
+    width: 915px
+
+    h2
+      text-align: left
+      margin-bottom: 25px
+
+    .description-row
+      margin-bottom: 25px
+      overflow: hidden
+
+      .details
+        width: 600px
+        float: right
+        font-size: 17px
+        line-height: 1.4
+
+.about-iag
+  background: #e6e7e9
+  padding: 55px 0px 90px
+
+  .site-content
+    width: 890px
+
+    .column
+      width: 390px
+      display: inline-block
+      vertical-align: top
+
+      &:first-of-type
+        margin-right: 100px
+
+      .text-box
+        text-align: left
+        font-size: 18px
+        line-height: 1.4
+
+    .left
+      position: relative
+
+      .ute-icon
+        position: absolute
+        bottom: -115px
+        right: 10px
+        background: url("../../images/car-icon.png") center no-repeat
+        width: 218px
+        height: 88px
+
+/* CONTACT US */
+
+.contact-page
+  background: #eff0f0
+  padding: 140px 0px 100px
+
+  .site-content
+    width: 845px
+
+    h2
+      margin-bottom: 15px
+
+    .intro
+      text-align: center
+      padding-bottom: 25px
+      border-bottom: 1px solid #9b9b9b
+      margin-bottom: 30px
+
+    .contact-methods
+      margin-bottom: 35px
+      font-family: "poppinsregular"
+      line-height: 1.4
+      position: relative
+
+      a
+        font-family: "poppinsmedium"
+        color: #0089a6
+        display: inline-block
+        margin-left: 10px
+
+        &:hover
+          color: #5cb1c2
+
+      .speech-bubble
+        position: absolute
+        right: 0px
+        top: 15px
+        background: url("../../images/speech-bubble.png") center no-repeat
+        width: 132px
+        height: 92px
+
+    .contact-form
+      background: #fff
+      padding: 65px 100px 75px
+      box-shadow: 0px 0px 20px 1px #c9d2d6
+      -webkit-box-shadow: 0px 0px 20px 1px #c9d2d6
+      -moz-box-shadow: 0px 0px 20px 1px #c9d2d6
+
+      label
+        font-family: "poppinslight"
+        font-size: 17px
+        line-height: 1.4
+        margin-bottom: 10px
+        display: block
+
+      input,
+      textarea
+        display: block
+        background: #eff0f0
+        width: 585px
+        margin-bottom: 35px
+        font-family: "poppinslight"
+        font-size: 16px
+        line-height: 1.2
+        color: #0089a6
+        box-sizing: border-box
+
+      input
+        padding: 12px 20px
+
+      .chosen-ute
+        //width: 35%
+        //display: inline-block
+        //text-align: center
+        //vertical-align: top
+        cursor: pointer
+
+        &:last-child
+          margin-bottom: 30px
+
+        .ute-img
+          width: 100%
+
+        .ute-name
+          //display: block
+          text-transform: uppercase
+          font-family: "metromedium_lt_tworegular"
+          font-size: 12px
+
+        input[type=checkbox]
+          width: auto
+          //display: block
+          display: inline-block
+          margin: 0px 5px 0px 0px
+
+      textarea
+        height: 315px
+        padding: 20px
+
+      .insurance-note
+        font-family: 'poppinsregular'
+        font-size: 16px
+        color: #008fac
+
+.make-enquiry-btn
+  font-family: "poppinsregular"
+  font-size: 16px
+  letter-spacing: 2px
+  text-transform: uppercase
+  color: #fff
+  background: #5cb1c2
+  padding: 12px 28px
+  margin-bottom: 30px
+
+  &:hover
+    background: #008fac
+  a
+    color: #fff
+
+  &.process
+    text-align: center
+    width: 226px
+    margin: 70px auto 0px
+    padding: 0px
+
+    a
+      display: block
+      padding: 12px 0px
+
+.form-error
+  color: #ff0000
+  font-size: 14px
+  margin: 5px 0px
+
+.form-success
+  color: #397D02
+  font-size: 14px
+  margin: 5px 0px
+
+/* FOOTER */
+
+#footer
+  background: #c9d2d6
+  padding-top: 45px
+
+  .site-content
+    width: 940px
+
+#footer-logo
+  float: left
+  margin-right: 80px
+  width: 112px
+  height: auto
+
+  a
+    display: block
+
+    img
+      width: 100%
+
+#bottom-nav
+  font-family: "poppinslight"
+  font-size: 14px
+  margin-bottom: 40px
+
+  .footer-col
+    display: inline-block
+    vertical-align: top
+    margin-right: 50px
+
+    &:last-of-type
+      width: 355px
+      margin-right: 0px
+      font-size: 12px
+      letter-spacing: 1.6px
+
+      p:first-child
+        font-family: "metromedium_lt_tworegular"
+        text-transform: uppercase
+        font-size: 16px
+        margin-bottom: 15px
+
+    ul
+      padding: 0px
+      margin: 0px
+
+      li
+        margin-bottom: 20px
+
+        &:first-of-type
+          font-family: "metromedium_lt_tworegular"
+          text-transform: uppercase
+          font-size: 16px
+          margin-bottom: 15px
+
+        a
+          color: #000
+
+          &:hover
+            color: #5cb8c9
+
+.we-are-here
+  text-align: center
+  font-family: 'poppinsregular'
+  font-size: 14px
+  line-height: 1.4
+
+  .site-content
+    width: 550px
+    margin: 0px auto
+
+    p
+      margin-bottom: 5px
+
+    .display-br
+      display: none
+
+    .we-are-here-title
+      border-top: 1px solid #2d2d2d
+      padding-top: 5px
+      width: 325px
+      display: block
+      margin: 0px auto
+      font-family: 'metromedium_lt_tworegular'
+      font-size: 16px
+      line-height: 1.8
+      text-transform: uppercase
+
+    .call-link
+      color: #008fac
+
+      &:hover
+        color: #004d80
+
+.copyright
+  padding: 0px 0px 30px
+  text-align: center
+  font-size: 12px
+
+  .display-br
+    display: none
+
+  .privacy,
+  .terms
+
+    a
+      color: #000
+
+      &:hover
+        color: #5cb8c9
+
+  .separator
+    background: #666
+    width: 1px
+    height: 12px
+    display: inline-block
+    vertical-align: -2px
+
+/* POPUP -- Compare all models using our specifications chart */
+
+#popup-overlay
+  background: #3e3e3e
+  opacity: 0.7
+  -moz-opacity: 0.7
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 500
+  display: none
+
+#popup-box,
+#chart-box
+  width: 1284px
+  //height: 2500px
+  background: #fff
+  padding: 30px 0px
+  position: absolute
+  top: 75%
+  left: 50%
+  margin-left: -640px
+  z-index: 501
+  display: none
+
+  .close-btn
+    position: absolute
+    z-index: 100
+    left: 100%
+    background: #5cb8c9
+    margin-left: 5px
+    top: 0px
+    font-family: "metromedium_lt_tworegular"
+    font-size: 14px
+
+    .close-x
+      display: block
+      a
+        color: #fff
+        display: block
+        padding: 5px
+
+        &:hover
+          color: #008fac
+          background: #fff
+
+  .manufacturer-stats
+    thead
+      tr
+        th:first-child
+          vertical-align: bottom
+
+        &:first-of-type
+          th
+            padding: 0px
+            vertical-align: bottom
+
+          .icon-image
+            text-align: center
+
+            img
+              -moz-transform: scaleX(-1)
+              -o-transform: scaleX(-1)
+              -webkit-transform: scaleX(-1)
+              transform: scaleX(-1)
+              filter: FlipH
+              -ms-filter: "FlipH"
+              margin: 25px auto 10px
+              max-width: 170px
+
+          .subtitle
+            display: block
+
+        &:last-of-type
+          th
+            padding-top: 0px
+            vertical-align: bottom
+
+  .manufacturer-stats,
+  .iag-stats
+    border-collapse: collapse
+
+    .light-grey
+      background: #ebebec
+
+      .light
+        background: #e9e9e9
+
+    .dark-grey
+      background: #b6c3c5
+
+      .dark
+        background: #d6d6d6
+
+    th
+      width: 247px
+      font-family: "poppinslight"
+      font-size: 16px
+      font-weight: normal
+      padding: 20px 0px
+      text-align: center
+
+    .border-right
+      border-right: 1px solid #000
+
+    thead
+      th
+        font-family: "metromedium_lt_tworegular"
+
+        &:first-child
+          text-align: left
+          padding-left: 45px
+
+    tbody
+      th
+        border-right: 1px solid #808080
+
+        &:last-child
+          border-right: none
+
+      .first-cell
+        font-family: "poppinsmedium"
+        text-align: left
+        padding-left: 45px
+
+  .iag-stats
+    margin-bottom: 60px
+
+    tbody
+      th
+        text-align: center
+        padding: 10px 0px
+
+      .first-cell
+        font-size: 12px
+
+  .call-button
+    display: block
+    text-align: center
+    margin: 30px 0px 40px
+
+    a
+      padding: 15px 25px
+
+  .data-note
+    text-align: center
+    font-family: poppinsmedium
+    font-size: 16px
+    color: #008fac
+
+#chart-box
+  width: 1410px
+  margin-left: -705px
+  transform: scale(0.9)
+
+  .manufacturer-stats
+    margin-bottom: 30px
+
+    thead th:first-child,
+    tbody .first-cell
+      padding-left: 15px
+
+/* PRIVACY TERMS POPUP */
+
+#privacy-popup,
+#terms-popup
+  display: none
+  z-index: 505
+  position: absolute
+  top: 3000px
+  left: 50%
+  margin-left: -360px
+  overflow: hidden
+  bottom: 20px
+  width: 720px
+  height: 840px
+  background: #fff
+  margin-left: -360px
+  box-sizing: border-box
+
+  .close-x
+    position: absolute
+    top: 5px
+    right: 10px
+    font-family: "metromedium_lt_tworegular"
+    font-size: 24px
+
+    a
+      color: #fff
+
+  .privacy-terms-title
+    font-family: 'metroblack_lt_tworegular'
+    font-size: 32px
+    text-transform: uppercase
+    text-align: center
+    line-height: 1
+    color: #fff
+    background: #008fac
+    padding: 27px 10px
+    margin-bottom: 30px
+    max-width: 720px
+    font-weight: normal
+
+  .content
+    font-family: "poppinslight"
+    font-size: 16px
+    line-height: 1.2
+    overflow: auto
+    max-height: 100%
+    color: #2d2d2d
+    position: absolute
+    top: 120px
+    left: 20px
+    right: 20px
+    bottom: 20px
+
+    h4
+      font-family: "poppinsregular"
+      font-size: 21px
+      margin-bottom: 15px
+
+    h5, h6
+      font-family: "poppinsregular"
+      font-style: italic
+
+    h5
+      font-size: 19px
+
+    h6
+      font-size: 16px
+      margin-bottom: 10px
+
+    ul
+      margin: 10px 0px
+      padding-left: 20px
+
+      li
+        list-style-type: disc
+        margin-left: 5px
+        margin-bottom: 5px
+
+    a
+      color: #008fac
+      text-decoration: underline
+
+      &:hover
+        font-family: "poppinsregular"
+
+/* REQUEST CALL BACK POPUP */
+
+.email-requested-popup
+  div.content
+    width: 360px
+    margin: 0px auto
+
+    input.email-requested
+      margin-bottom: 20px
+
+#popup-chat.request-call-popup,
+.email-requested-popup
+  position: absolute
+  left: 50%
+  top: 275px
+  width: 720px
+  background: #fff
+  border: 2px solid #008fac
+  margin-left: -360px
+  box-sizing: border-box
+  display: none
+  z-index: 1000
+
+  .close-button
+    background: #004d80
+    color: #fff
+    cursor: pointer
+    display: block
+    font-family: "poppinsmedium"
+    font-size: 16px
+    line-height: 30px
+    position: absolute
+    right: -15px
+    text-align: center
+    top: -15px
+    width: 30px
+    border-radius: 20px
+
+  .h3-popup
+    font-family: 'metroblack_lt_tworegular'
+    font-size: 32px
+    text-transform: uppercase
+    text-align: center
+    line-height: 1
+    color: #fff
+    background: #008fac
+    padding: 27px 10px
+    max-width: 720px
+    font-weight: normal
+    margin-bottom: 30px
+
+  div.content
+    font-family: "poppinslight"
+    font-size: 16px
+    line-height: 1.2
+    text-align: center
+    overflow: auto
+    max-height: 100%
+    color: #2d2d2d
+    padding: 10px 10px 30px
+
+    input[type=text],
+    input[type=date],
+    input[type=email]
+      border: 1px solid #2d2d2d
+      width: 100%
+      padding: 0px 20px
+      height: 45px
+      box-sizing: border-box
+
+    input[type="date"]::-webkit-calendar-picker-indicator
+      background: #fff
+      color: #008fac
+
+    input[type="date"]::-webkit-inner-spin-button
+      display: none
+
+    input
+      font-family: "poppinslight"
+      font-size: 16px
+      line-height: 1.2
+
+    form.contact-form
+      max-width: 610px
+      margin: 20px auto 0px
+      box-sizing: border-box
+
+      ::-webkit-input-placeholder
+        color: #2d2d2d
+
+      ::-moz-placeholder
+        color: #2d2d2d
+
+      :-ms-input-placeholder
+        color: #2d2d2d
+
+      .formfield
+        float: left
+        width: 48%
+        margin-right: 4%
+        margin-bottom: 20px
+        box-sizing: border-box
+
+        &:nth-child(2n)
+          margin-right: 0
+
+    .submit
+      clear: both
+
+      input[type=submit]
+        font-family: "metromedium_lt_tworegular"
+        font-size: 18px
+        text-transform: uppercase
+        background: #5cb1c2
+        color: #fff
+        padding: 10px 30px
+
+        &[disabled=disabled]
+          background: #5cb1c2 !important
+          opacity: 0.5
+          cursor: default
+
+        &:hover
+          background: #008fac
+
+#print-summary
+  position: absolute
+  background: #fff
+  top: 0
+  left: 0
+  width: 100%
+  padding-bottom: 80px
+
+  .print-btn
+    position: absolute
+    left: 10px
+    top: 10px
+
+  .print-content
+    width: 700px
+    text-align: center
+    margin: 0px auto
+
+    .nrma-logo
+      width: 40%
+      margin: 10px auto
+
+      img
+        width: 100%
+
+    h2
+      font-size: 26px
+      padding-top: 25px
+      border-top: 1px solid #2d2d2d
+      width: 60%
+      margin: 0px auto 20px
+
+    .selected-details
+      width: 50%
+      border: 2px solid #008fac
+      margin: 0px auto 20px
+
+      .top
+        padding: 20px 0px
+
+        .ute-img
+          margin-bottom: 20px
+
+          img
+            width: 65%
+            margin: 0px auto
+
+        .ute-name
+          text-transform: uppercase
+          font-family: "metromedium_lt_tworegular"
+          font-weight: normal
+          font-size: 26px
+          letter-spacing: 2px
+          margin-bottom: 10px
+
+        .ute-price
+          font-family: "poppinslight"
+          font-size: 26px
+          letter-spacing: 2px
+          font-weight: normal
+
+      .bottom
+        background: #008fac
+        color: #fff
+        padding: 20px 0px
+        font-family: "poppinsregular"
+        font-size: 18px
+        line-height: 1.2
+        letter-spacing: 2px
+        position: relative
+
+        &:before
+          content: ""
+          position: absolute
+          top: -11px
+          left: 50%
+          margin-left: -24px
+          background: url("../../images/aqua-arrow.jpg") center no-repeat
+          width: 47px
+          height: 11px
+
+        .details-list
+          margin: 0px
+
+          li:nth-child(2n)
+            margin-bottom: 20px
+
+          li:last-child
+            margin-bottom: 0px
+
+    .btm-note
+      width: 80%
+      margin: 0px auto
+      font-family: "poppinslight"
+      font-size: 16px
+
+      .offer-ends
+        padding-top: 20px
+        border-top: 1px solid #2d2d2d
+        width: 100%
+        margin: 0px auto 15px
+
+    span
+      display: block
+
+/* Our Process */
+
+.our-process
+  width: 970px
+  margin: 0px auto
+  overflow: hidden
+
+  .row
+    width: 100%
+
+    &:nth-child(2n)
+      .box
+        &.blue
+          float: right
+        &.fig
+          float: left
+
+    .box
+      width: 50%
+      text-align: center
+      color: #fff
+      float: left
+      font-size: 18px
+      box-sizing: border-box
+      height: 275px
+      line-height: 275px
+      background: #fff
+
+      &.fig
+        float: right
+
+      .center
+        vertical-align: middle
+        line-height: 1.3
+
+        .title
+          font-family: "metromedium_lt_tworegular"
+          text-transform: uppercase
+          font-size: 24px
+          display: block
+          margin-bottom: 20px
+
+      img
+        vertical-align: middle
+        max-width: 100%
+
+    .blue
+      background: #5c9dae
+      padding: 25px
+      box-sizing: border-box
+
+html
+  padding: 0px !important
+
+.show-popup
+  max-width: 100%
+  padding-top: 200px
+
+  #popup-box, #chart-box
+    display: block !important
+    left: 0px !important
+    top: 0px !important
+    margin: 0px auto !important
+    position: relative !important
+    transform-origin: center top !important
+
+    .close-btn
+      display: none !important
+
+    .manufacturer-stats,
+    .iag-stats
+      tbody
+        .first-cell
+          padding-left: 7px
+
+    .data-note
+      max-width: 640px
+      margin: 0px auto

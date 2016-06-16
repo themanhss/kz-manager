@@ -1,0 +1,41 @@
+#tabs-section .site-content .tab .vc_tta-panels-container .top-box p:nth-child(3) {
+    background-image: url("../../images/img_03.jpg");
+    background-position: center 32px;
+    background-size: 63px auto;
+    padding-top: 120px;
+}
+
+#tabs-section .site-content .tab .vc_tta-panels-container .top-box p:nth-child(4) {
+    background-image: url("../../images/img_05.jpg");
+    background-size: 97px auto;
+    background-position: center -5px;
+}
+
+#tabs-section .site-content .tab .vc_tta-panels-container .top-box p {
+  padding-top: 120px;
+  width:170px;
+}
+
+#tabs-section .site-content .tab .vc_tta-panels-container .top-box p:nth-child(2) {
+    background-image: url("../../images/one-blue-bubble-deco.png");
+    background-position: center 60px;
+    background-size: auto 40px;
+}
+
+#post-168 .entry-content #parent-child ,
+#post-166 .entry-content #parent-child.graduate-swim-program,
+#post-170 .entry-content #parent-child.competent-program,
+#post-641 .entry-content #independent 
+{
+  background: url("../../images/img_banner_other_programs.jpg") no-repeat scroll 0 0 ;
+  background-size: cover;
+}
+
+
+#post-168 .entry-content #text-area .right-side.adult-sidebar .sidebar ,
+#post-166 .entry-content #text-area .right-side.aqua-sidebar .sidebar ,
+#post-170 .entry-content #text-area .right-side.hydro-sidebar .sidebar,
+#post-641 .entry-content #text-area .members-swim .right-side .sidebar
+{
+    background: rgb(0, 96, 127) none repeat scroll 0 0 !important;
+}

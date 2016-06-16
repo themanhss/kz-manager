@@ -1,0 +1,23 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /etc/codedeploy-agent/links/iag_promo/httpdocs
+    #destination: /var/www/vhosts/iag_promo/iag.saltandfuessel.com.au/httpdocs
+    
+hooks:
+   ApplicationStop:
+     - location: scripts/stop_services.sh
+       runas: root
+   BeforeInstall:
+     - location: scripts/setup.sh
+       runas: root
+   AfterInstall:
+     - location: scripts/set_owner.sh
+       runas: root
+   ApplicationStart:
+     - location: scripts/start_services.sh
+       runas: root
+     - location: scripts/remove_scripts.sh
+       runas: root  
+ 
