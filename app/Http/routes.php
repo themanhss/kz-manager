@@ -47,14 +47,11 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-    // Blogspot Manager
+    // Gmail Manager
     Route::get('gmails', 'Gmail\GmailController@index');
     Route::get('gmails/create', 'Gmail\GmailController@create');
 
-
-
-
-
+    Route::get('gmails/{gmail_id}/blogspots', 'Gmail\GmailController@blogspot');
 
 
 
