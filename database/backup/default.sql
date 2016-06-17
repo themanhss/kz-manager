@@ -88,7 +88,7 @@ WITH (OIDS=FALSE)
 -- Records of users
 -- ----------------------------
 INSERT INTO "public"."users" VALUES ('1', 'Henry', 'Tran', 'henry.tran@qsoftvietnam.com',
-'$2y$10$jfOXeW9aqtuP4QA0gzn1re6GEoTCsokcrNAmFISBx677PG1m4kx5q','', '1', '1', '1',
+'$2y$10$jfOXeW9aqtuP4QA0gzn1re6GEoTCsokcrNAmFISBx677PG1m4kx5q','', '1', '1',
 'D3lM24muUb4K5b4uM2LP4GipGXqGainL58kDHb7Z6FL8Vb9naNoWVgICvENM', '2016-03-17 17:07:27', '2016-03-17 10:38:23', null);
 
 -- ----------------------------

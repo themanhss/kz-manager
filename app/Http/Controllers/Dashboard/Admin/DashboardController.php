@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Module;
-use App\Models\Promotion;
-use App\Models\Lead;
 class DashboardController extends Controller {
     /*
       |--------------------------------------------------------------------------
@@ -32,9 +30,6 @@ class DashboardController extends Controller {
      */
     public function index() {
 
-        $promotions = Promotion::take(5)->get();
-        $leads = Lead::take(5)->get();
-
-        return view('dashboard.admin.index',['promotions'=> $promotions, 'leads'=> $leads]);
+        return view('dashboard.admin.index',[]);
     }
 }

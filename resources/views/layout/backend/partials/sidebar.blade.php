@@ -27,17 +27,17 @@
             </li>
 
             <?php
-            if (strpos(Route::getCurrentRoute()->getPath(), 'admin/promotions') !== false) {
-                $active_promotion = true;
+            if (strpos(Route::getCurrentRoute()->getPath(), 'admin/gmails') !== false) {
+                $active_gmails = true;
             }else{
-                $active_promotion = false;
+                $active_gmails = false;
             }
             ?>
 
-            <li class="{{$active_promotion?'active':'' }}">
-                <a href="{{url('admin/promotions')}}">
+            <li class="{{$active_gmails?'active':'' }}">
+                <a href="{{url('admin/gmails')}}">
                     <i class="fa fa-dashboard"></i>
-                    <span>Promotions</span>
+                    <span>Blogspots</span>
                 </a>
             </li>
 

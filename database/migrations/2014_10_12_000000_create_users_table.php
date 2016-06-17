@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('avatar');
-            $table->tinyInteger('isSuperAdmin')->default(0);
             $table->tinyInteger('isActive')->default(0);
             $table->tinyInteger('isAdmin')->default(0);
             $table->rememberToken();
