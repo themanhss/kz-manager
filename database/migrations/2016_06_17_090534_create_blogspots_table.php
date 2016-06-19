@@ -16,6 +16,7 @@ class CreateBlogspotsTable extends Migration
             $table->increments('id');
             $table->string('url',100);
             $table->integer('gmail_id');
+            $table->string('blog_id',20);
             $table->text('description')->nullable();
             $table->date('start_at')->nullable();
 

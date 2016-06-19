@@ -52,6 +52,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('gmails/create', 'Gmail\GmailController@create');
 
     Route::get('gmails/{gmail_id}/blogspots', 'Gmail\GmailController@blogspot');
+    Route::get('gmails/blogspots/run', 'Gmail\GmailController@postToBlog');
 
 
 
@@ -63,6 +64,6 @@ Route::group(['prefix' => 'admin'], function () {
   |--------------------------------------------------------------------------
  */
 
-
-
+Route::get('', 'Dashboard\Admin\DashboardController@index');
+Route::get('/return_success', 'Gmail\GmailController@returnSuccess');
 

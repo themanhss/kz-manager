@@ -72,7 +72,11 @@
                                                     <button type="button" class="btn btn-danger">Remove</button>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-warning">Run</button>
+                                                    <button type="button" class="btn btn-warning">
+                                                        <a href="{{ url('admin/gmails/blogspots/run') }}">
+                                                            Run
+                                                        </a>
+                                                    </button>
                                                 </td>
                                             </tr>
                                         @endforeach
