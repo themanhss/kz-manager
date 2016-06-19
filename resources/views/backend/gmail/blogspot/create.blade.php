@@ -3,7 +3,7 @@
 @section("content")
     <section class="content-header">
         <h1>
-            Add New Gmail
+            Add New Blogspot
         </h1>
         <ol class="breadcrumb">
             <li><a href="/admin"><i class="fa fa-dashboard"></i> Admin</a></li>
@@ -13,43 +13,25 @@
     </section>
     <div class="create-user">
         <div class="col-md-9 col-md-offset-1">
-            <form id="assetForm" class="form-horizontal" action="/admin/gmails/create" method="post" enctype="multipart/form-data">
+            <form id="assetForm" class="form-horizontal" action="/admin/gmails/{{$gmail_id}}/blogspot/create" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="assetType">Gmail</label>
+                        <label class="col-md-3 control-label" for="assetType">Url</label>
 
                         <div class="col-md-6">
-                            <input id="gmail" name="gmail" type="text" class="form-control"
-                                   value="{{ old('gmail') }}">
-                            <span class="text-danger">{{ $errors->first('gmail') }}</span>
+                            <input id="url" name="url" type="text" class="form-control"
+                                   value="{{ old('url') }}">
+                            <span class="text-danger">{{ $errors->first('url') }}</span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="uploadDate">Phone</label>
+                        <label class="col-md-3 control-label" for="blog_id">Blog ID</label>
 
                         <div class="col-md-6">
-                            <input id="phone" name="phone" type="text" class="form-control"
-                                   value="{{ old('phone') }}">
-                            <span class="text-danger">{{ $errors->first('phone') }}</span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="assetType">Client Key</label>
-
-                        <div class="col-md-4">
-                            <input id="client_key" name="client_key" type="file" class="form-control" value="">
-                            <span class="text-danger">{{ $errors->first('client_key') }}</span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="assetType">Email Back Up</label>
-
-                        <div class="col-md-6">
-                            <input id="email_backup" name="email_backup" type="text" class="form-control" value="{{ old('email_backup') }}">
-                            <span class="text-danger">{{ $errors->first('email_backup') }}</span>
+                            <input id="blog_id" name="blog_id" type="text" class="form-control"
+                                   value="{{ old('blog_id') }}">
+                            <span class="text-danger">{{ $errors->first('blog_id') }}</span>
                         </div>
                     </div>
 
@@ -61,7 +43,6 @@
                             <span class="text-danger">{{ $errors->first('description') }}</span>
                         </div>
                     </div>
-
 
                     <!-- Form actions -->
                     <div class="form-group">

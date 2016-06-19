@@ -17,6 +17,7 @@ class CreateGmailsTable extends Migration
             $table->string('gmail',100);
             $table->string('phone',11)->nullable();
             $table->string('email_backup',100)->nullable();
+            $table->text('client_key')->nullable();
             $table->date('start_at')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

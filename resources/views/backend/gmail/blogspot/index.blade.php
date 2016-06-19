@@ -20,9 +20,9 @@
             <!-- header-->
     <section class="content-header">
         <h1>
-            Gmails &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Blogspot &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <a type="button" href="/admin/gmails/create" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Add more</a>
+            <a type="button" href="/admin/gmails/{{$gmail_id}}/blogspot/create" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Add more blogspot</a>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
@@ -73,7 +73,7 @@
                                                 </td>
                                                 <td>
                                                     <button type="button" class="btn btn-warning">
-                                                        <a href="{{ url('admin/gmails/blogspots/run') }}">
+                                                        <a href="{{ url('admin/gmails/'.$gmail_id.'/blogspots/'.$blogspot->blog_id.'/run') }}">
                                                             Run
                                                         </a>
                                                     </button>
