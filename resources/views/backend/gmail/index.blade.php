@@ -44,10 +44,7 @@
                                             colspan="1" aria-label="Name: activate to sort column
                                             ascending">Gmail
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-label="Name: activate to sort column ascending">
-                                            Created Date
-                                        </th>
+                                        <th>Total Blogs</th>
                                         <th>Edit</th>
                                         <th>Remove</th>
                                         <th>Run</th>
@@ -62,9 +59,14 @@
                                                         {{$gmail->gmail}}
                                                     </a>
                                                 </td>
-                                                <td>{{$gmail->start_at}}</td>
                                                 <td>
-                                                    <a class="" href="{{url('admin/users/edit',['id'=>$gmail->id])}}">
+                                                    <?php
+                                                        $blogs = $gmail->blogs;
+                                                        echo count($blogs);
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a class="" href="{{url('admin/gmails/'.$gmail->id.'/edit')}}">
                                                         <button type="button" class="btn btn-primary">Edit</button>
                                                     </a>
                                                 </td>

@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin'], function () {
     // Gmail Manager
     Route::get('gmails', 'Gmail\GmailController@index');
     Route::any('gmails/create', 'Gmail\GmailController@create');
+    Route::any('gmails/{gmail_id}/edit', 'Gmail\GmailController@edit');
 
     Route::any('gmails/{gmail_id}/post-all-blog', 'Gmail\GmailController@postAllBlog');
 

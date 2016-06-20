@@ -44,10 +44,6 @@
                                             colspan="1" aria-label="Name: activate to sort column
                                             ascending">Url
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-label="Name: activate to sort column ascending">
-                                            Created Date
-                                        </th>
                                         <th>Edit</th>
                                         <th>Remove</th>
                                         <th>Run</th>
@@ -62,7 +58,6 @@
                                                         {{$blogspot->url}}
                                                     </a>
                                                 </td>
-                                                <td>{{$blogspot->start_at}}</td>
                                                 <td>
                                                     <a class="" href="#">
                                                         <button type="button" class="btn btn-primary">Edit</button>

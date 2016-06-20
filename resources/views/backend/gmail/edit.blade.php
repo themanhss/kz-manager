@@ -3,17 +3,12 @@
 @section("content")
     <section class="content-header">
         <h1>
-            Add New Gmail
+            Edit Gmail Info
         </h1>
-        <ol class="breadcrumb">
-            <li><a href="/admin"><i class="fa fa-dashboard"></i> Admin</a></li>
-            <li class=""><a href="/admin/users">Manager User</a></li>
-            <li class="active">Create User</li>
-        </ol>
     </section>
     <div class="create-user">
         <div class="col-md-9 col-md-offset-1">
-            <form id="assetForm" class="form-horizontal" action="/admin/gmails/create" method="post" enctype="multipart/form-data">
+            <form id="assetForm" class="form-horizontal" action="/admin/gmails/{{$gmail->id}}/edit" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
@@ -21,7 +16,7 @@
 
                         <div class="col-md-6">
                             <input id="gmail" name="gmail" type="text" class="form-control"
-                                   value="{{ old('gmail') }}">
+                                   value="{{$gmail->gmail}}">
                             <span class="text-danger">{{ $errors->first('gmail') }}</span>
                         </div>
                     </div>
@@ -30,7 +25,7 @@
 
                         <div class="col-md-6">
                             <input id="phone" name="phone" type="text" class="form-control"
-                                   value="{{ old('phone') }}">
+                                   value="{{ $gmail->phone }}">
                             <span class="text-danger">{{ $errors->first('phone') }}</span>
                         </div>
                     </div>
@@ -39,7 +34,7 @@
                         <label class="col-md-3 control-label" for="assetType">Client Key</label>
 
                         <div class="col-md-4">
-                            <input id="client_key" name="client_key" type="file" class="form-control" value="">
+                            <input id="client_key" name="client_key" type="file" class="form-control" value="{{$gmail->client_key}}">
                             <span class="text-danger">{{ $errors->first('client_key') }}</span>
                         </div>
                     </div>
@@ -48,7 +43,7 @@
                         <label class="col-md-3 control-label" for="assetType">Email Back Up</label>
 
                         <div class="col-md-6">
-                            <input id="email_backup" name="email_backup" type="text" class="form-control" value="{{ old('email_backup') }}">
+                            <input id="email_backup" name="email_backup" type="text" class="form-control" value="{{$gmail->email_backup}}">
                             <span class="text-danger">{{ $errors->first('email_backup') }}</span>
                         </div>
                     </div>
@@ -57,7 +52,7 @@
                         <label class="col-md-3 control-label" for="assetType">Description</label>
 
                         <div class="col-md-6">
-                            <textarea id="description" name="description" value="{{ old('description') }}" class="form-control">{{ old('description') }}</textarea>
+                            <textarea id="description" name="description" value="{{ $gmail->description }}" class="form-control">{{ $gmail->description }}</textarea>
                             <span class="text-danger">{{ $errors->first('description') }}</span>
                         </div>
                     </div>

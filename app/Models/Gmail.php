@@ -34,4 +34,12 @@ class Gmail extends Model
      * @var array
      */
     //protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Get the blogspot for the gmail.
+     */
+    public function blogs()
+    {
+        return $this->hasMany('App\Models\Blogspot','gmail_id');
+    }
 }

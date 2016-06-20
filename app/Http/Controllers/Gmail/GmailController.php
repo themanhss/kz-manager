@@ -102,6 +102,72 @@ class GmailController extends Controller {
 		return view('backend.gmail.create');
 	}
 
+	/*
+     * Edit a Gmail Account
+     *
+     *@POST("/admin/gmails/{$gmail_id}/edit")
+     *@Param: ({'firstName','lastName', 'email', 'password', '', 'isCompanyAdmin'})
+     *@Version("v1")
+     */
+	public function edit($gmail_id, Request $request)
+	{
+		if ($request->getMethod() == 'POST') {
+
+			$datas = $request->all();
+
+			/*Validation form*/
+			$validator = Validator::make($request->all(), [
+				'gmail' => 'required'
+			]);
+
+			if ($validator->fails()) {
+				return redirect('admin/gmails/'.$gmail_id.'/edit')
+					->withErrors($validator)
+					->withInput();
+			}
+
+
+			$file = array_get($datas, 'client_key');
+			if ($file) {
+				// SET UPLOAD PATH
+				$destinationPath = "uploads/gmail/client_key/";
+				// GET THE FILE EXTENSION
+				$extension = $file->getClientOriginalExtension();
+				// RENAME THE UPLOAD WITH RANDOM NUMBER
+				$fileName = rand(11111, 99999) . '.' . $extension;
+				// MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
+				$upload_success = $file->move($destinationPath, $fileName);
+
+
+				if ($upload_success) {
+					$datas['client_key'] = $fileName;
+				}
+			} else {
+				$datas['client_key'] = '';
+			}
+
+			$gmail = Gmail::find($gmail_id);
+
+			$gmail->gmail = $datas['gmail'];
+			$gmail->phone = $datas['phone'];
+
+			if(!$datas['client_key']){
+				$gmail->client_key = $datas['client_key'];
+			}
+
+			if ($gmail->save()) {
+				return redirect()->action('Gmail\GmailController@index');
+			} else {
+
+			}
+
+		}
+
+		$gmail = Gmail::find($gmail_id);
+		return view('backend.gmail.edit',['gmail'=>$gmail]);
+	}
+
+
 
 	/*
      *Save a Blogspot Account
@@ -206,6 +272,11 @@ class GmailController extends Controller {
 			//var_dump($accessToken);die();
 
 			//$blogid = '5032988436021182927';
+
+			$content = $this->mixContent();
+			$title = $content['title'];
+			$main_content = $content['content'];
+
 			$blogid = $blog_id;
 
 			$url = 'https://www.googleapis.com/blogger/v3/blogs/'.$blogid.'/posts/';
@@ -213,8 +284,8 @@ class GmailController extends Controller {
 			$body = array(
 				'kind' => 'blogger#post',
 				'blog' => array('id' => $blogid),
-				'title' => 'This is title 11111111111111111111111',
-				'content' => 'With <b>exciting</b> content 222222...'
+				'title' => $title,
+				'content' => $main_content
 			);
 
 			$data_string = json_encode($body);
@@ -241,7 +312,7 @@ class GmailController extends Controller {
 
 			curl_close($ch);
 			//$gmail_id = 1;
-			return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
+			//return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
 
 
 		} else {
@@ -286,4 +357,199 @@ class GmailController extends Controller {
 
 		return redirect()->to('admin/gmails');
 	}
+
+
+	/*
+	 * Mix content to post
+	 * @return : {$title, $content}
+	 * */
+
+	public function mixContent(){
+
+		//Get all img name
+		$array_images_name =  file(public_path().'/tool/pre/images-name.txt', FILE_IGNORE_NEW_LINES);
+
+		// Get Origin Content
+		$main_data = file_get_contents(public_path().'/tool/pre/data.txt');
+
+		/*get one phrase to insert title*/
+		$one_string = file(public_path().'/tool/pre/title.txt', FILE_IGNORE_NEW_LINES);
+
+
+		/*Proccess title*/
+		$titles = $one_string;
+		$max_string = count($titles);
+
+		$new_titles = $this->array_random($titles,$max_string);
+
+
+		$new_title = '';
+		$new_title_data = '';
+
+		$kk = 0;
+		foreach ($new_titles as $new) {
+			if($kk < 5){
+				if(!$new_title){
+					$new_title = $new;
+					$new_title_data = $new;
+				}else{
+					$new_title = $new_title.'-'.$new;
+					$new_title_data = $new_title_data.' '.$new;
+				}
+			}
+			$kk = $kk + 1;
+		}
+
+		$new_title_data = str_replace('-',' ', $new_title_data);
+		$new_title_data = ucfirst($new_title_data);
+
+
+		$new_title = $this->convert_vi_to_en($new_title);
+
+		/*remove images*/
+		$main_data = preg_replace("/<img[^>]+\>/i", "", $main_data);
+		$main_data = str_replace("'","", $main_data);
+
+		/*remove a tag*/
+//         $main_data = preg_replace('/<a href=\"(.*?)\">(.*?)<\/a>/', "", $main_data);
+		$main_data = preg_replace('/<a(.*?)">(.*?)<\/a>/', "", $main_data);
+
+		/* Replace text*/
+		$lines = file(public_path().'/tool/pre/replace.txt', FILE_IGNORE_NEW_LINES);
+		foreach($lines as $line){
+
+			$temps = explode("-", $line);
+			$length_temps = count($temps);
+
+//			foreach($temps as $temp){
+			$index = rand(1,$length_temps-1);
+
+			$temp_main = str_replace($temps[0], ' '.$temps[$index].' ', $main_data);
+			$main_data = $temp_main;
+//			}
+		};
+
+		/*Insert keyword to content*/
+		$lines = file(public_path().'/tool/pre/keyword.txt', FILE_IGNORE_NEW_LINES);
+		for($i = 0 ; $i < 10; $i++){
+			$index = rand(0,count($lines)-1);
+		}
+
+		$mains = explode("</p>", $main_data);
+		$mains = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $mains);
+		$mains = preg_replace('/(<[^>]+) class=".*?"/i', '$1', $mains);
+
+		$mains = $this->array_random($mains, count($mains));
+
+		$result = '';
+		/*remove p tag, if this has content < 100 string*/
+		foreach($mains as $key => $main){
+			if(strlen($main) < 100){
+				unset($mains[$key]);
+			}
+		}
+
+		$k =1;
+		$temp_add_links = '';
+		foreach($mains as $main){
+			if($k<=30) {
+				if($k%2 == 1 && $k <= 25 ) {
+					//$main = str_replace('<span>','<span style=""><b>'.$lines[rand(0,count($lines)-1)].'</b> ',$main);
+					if($k < 8) {
+						$main = str_replace('<span>','<span style=""><h2>'.$lines[rand(0,count($lines)-1)].'</h2> ',$main);
+					}
+					if(6 < $k &&  $k <=12) {
+						//$main = str_replace('<span>','<span style=""><h3>'.$lines[rand(0,count($lines)-1)].'</h3> ',$main);
+					}
+					if(12 < $k &&  $k <=15) {
+						//$main = str_replace('<span>','<span style=""><h4>'.$lines[rand(0,count($lines)-1)].'</h4> ',$main);
+					}
+					if(15 < $k &&  $k <=19) {
+						$main = str_replace('<span>','<span style=""><h5>'.$lines[rand(0,count($lines)-1)].'</h5> ',$main);
+					}
+					if(19 < $k &&  $k <=25) {
+						//$main = str_replace('<span>','<span style=""><h6>'.$lines[rand(0,count($lines)-1)].'</h6> ',$main);
+					}
+				}
+				$result = trim($result).trim($main);
+				if($k==1){
+					$result = $result.'<!--more-->';
+				}
+
+				/*Insert images*/
+				$temp_img = $array_images_name[array_rand($array_images_name)];
+				if($k%3 == 1 && $k <= 5) {
+					$result = $result.'<p><a href="#"><img class="aligncenter" src="'.$temp_img.'" alt="'.$temp_img.'" width="600"></a></p>';
+				}
+
+				if($k%3 == 1 && $k >= 5 && $k < 9) {
+					$result = $result.'<p><a href="#"><img class="aligncenter" src="'.$temp_img.'" alt="'.$temp_img.'" width="600"></a></p>';
+				}
+
+				if($k%3 == 1 && $k >= 9) {
+					$result = $result.'<p><img class="aligncenter" src="'.$temp_img.'" alt="'.$temp_img.'" width="600"></p>';
+				}
+			}
+			if($k==31){
+				$one_links = file(public_path().'/tool/pre/links.txt', FILE_IGNORE_NEW_LINES);
+				if($one_links){
+					$one_links = $this->array_random($one_links, count($one_links));
+
+					$jj = 0;
+					foreach($one_links as $one_link){
+						if($jj < 5){
+							$temp_add_links = $temp_add_links.$one_link.'<br>';
+						}
+						$jj++;
+					}
+					//$result = $result.'<div>'.$temp_add_links.'</div>';
+				}
+			}
+			$k++;
+		}
+
+		$result_return = array(
+			"title" => $new_title_data,
+			"content" => $result,
+		);
+
+		return $result_return;
+	}
+
+	/*
+	 * Convert Vi to EN
+	 *
+	 * */
+	public function convert_vi_to_en($str) {
+		$str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", 'a', $str);
+		$str = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", 'e', $str);
+		$str = preg_replace("/(ì|í|ị|ỉ|ĩ)/", 'i', $str);
+		$str = preg_replace("/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/", 'o', $str);
+		$str = preg_replace("/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/", 'u', $str);
+		$str = preg_replace("/(ỳ|ý|ỵ|ỷ|ỹ)/", 'y', $str);
+		$str = preg_replace("/(đ)/", 'd', $str);
+		$str = preg_replace("/(À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ)/", 'A', $str);
+		$str = preg_replace("/(È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ)/", 'E', $str);
+		$str = preg_replace("/(Ì|Í|Ị|Ỉ|Ĩ)/", 'I', $str);
+		$str = preg_replace("/(Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ)/", 'O', $str);
+		$str = preg_replace("/(Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ)/", 'U', $str);
+		$str = preg_replace("/(Ỳ|Ý|Ỵ|Ỷ|Ỹ)/", 'Y', $str);
+		$str = preg_replace("/(Đ)/", 'D', $str);
+
+		return $str;
+	}
+
+	/*
+	 * Get random in array
+	 * */
+	public function array_random($arr, $num = 1) {
+		shuffle($arr);
+
+		$r = array();
+		for ($i = 0; $i < $num; $i++) {
+			$r[] = $arr[$i];
+		}
+		return $num == 1 ? $r[0] : $r;
+	}
+
 }
