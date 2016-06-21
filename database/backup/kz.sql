@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-06-21 00:46:10
+Date: 2016-06-21 23:48:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `blogspots` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of blogspots
@@ -43,6 +43,16 @@ INSERT INTO `blogspots` VALUES ('7', 'http://conversehanoi.blogspot.com/', '1647
 INSERT INTO `blogspots` VALUES ('8', 'http://giaynikenuhanoi.blogspot.com/', '1259944265994133177', '1', '', null, '2016-06-19 09:32:03', '2016-06-19 09:32:03', null);
 INSERT INTO `blogspots` VALUES ('9', 'http://giaynikenamhanoi.blogspot.com/', '226835874716525883', '1', '', null, '2016-06-19 09:32:22', '2016-06-19 09:32:22', null);
 INSERT INTO `blogspots` VALUES ('10', 'http://giayvansgiarehanoi.blogspot.com/', '4786102494371211784', '1', '', null, '2016-06-19 09:32:36', '2016-06-19 09:32:36', null);
+INSERT INTO `blogspots` VALUES ('11', 'http://giayvansgiare2015.blogspot.com/', '8944680025495986995', '6', '', null, '2016-06-20 17:58:09', '2016-06-20 17:58:09', null);
+INSERT INTO `blogspots` VALUES ('12', 'http://giayconversegiare2015.blogspot.com/', '4554678448998355695', '6', '', null, '2016-06-20 18:00:40', '2016-06-20 18:00:40', null);
+INSERT INTO `blogspots` VALUES ('13', 'http://shopgiayconversehcm.blogspot.com/', '5426467113046141448', '6', '', null, '2016-06-20 18:00:59', '2016-06-20 18:00:59', null);
+INSERT INTO `blogspots` VALUES ('14', 'http://shopgiayvansnam.blogspot.com/', '6781092427198814269', '6', '', null, '2016-06-20 18:01:12', '2016-06-20 18:01:12', null);
+INSERT INTO `blogspots` VALUES ('15', 'http://giayadidasnudanang.blogspot.com/', '297340918127475195', '6', '', null, '2016-06-20 18:01:27', '2016-06-20 18:01:27', null);
+INSERT INTO `blogspots` VALUES ('16', 'http://giayvansdepgiare.blogspot.com/', '2726218970918934815', '6', '', null, '2016-06-20 18:01:42', '2016-06-20 18:01:42', null);
+INSERT INTO `blogspots` VALUES ('17', 'http://giaynikedepgiare.blogspot.com/', '3236665221729947846', '6', '', null, '2016-06-20 18:01:57', '2016-06-20 18:01:57', null);
+INSERT INTO `blogspots` VALUES ('18', 'http://giaynikenamdanang.blogspot.com/', '2503100807518864072', '6', '', null, '2016-06-20 18:02:38', '2016-06-20 18:02:38', null);
+INSERT INTO `blogspots` VALUES ('19', 'http://giayadidasdanang.blogspot.com/', '5472107550338934535', '6', '', null, '2016-06-20 18:03:03', '2016-06-20 18:03:03', null);
+INSERT INTO `blogspots` VALUES ('20', 'http://giaynikedanang.blogspot.com/', '1776880128415821304', '6', '', null, '2016-06-20 18:03:33', '2016-06-20 18:03:33', null);
 
 -- ----------------------------
 -- Table structure for gmails
@@ -60,7 +70,7 @@ CREATE TABLE `gmails` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of gmails
@@ -68,6 +78,7 @@ CREATE TABLE `gmails` (
 INSERT INTO `gmails` VALUES ('1', 'themanhss@gmail.com', null, '29972.json', null, null, null, '0000-00-00 00:00:00', '0000-00-00 00:00:00', null);
 INSERT INTO `gmails` VALUES ('2', 'iag.dev2016@gmail.com', '', '', null, null, null, '0000-00-00 00:00:00', '2016-06-20 17:19:53', null);
 INSERT INTO `gmails` VALUES ('3', 'theman2311@gmail.com', '968332556', '29972.json', null, null, null, '2016-06-19 03:59:21', '2016-06-19 03:59:21', null);
+INSERT INTO `gmails` VALUES ('6', 'vinhbao.love09@gmail.com', '', '19669.json', null, null, null, '2016-06-20 17:57:03', '2016-06-20 17:57:03', null);
 
 -- ----------------------------
 -- Table structure for migrations

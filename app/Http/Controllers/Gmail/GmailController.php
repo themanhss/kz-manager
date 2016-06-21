@@ -240,16 +240,18 @@ class GmailController extends Controller {
 
 		$this->client = new \Google_Client();
 		$this->client->setAccessType('offline');
-		$this->client->setApprovalPrompt('force');
+		$this->client->setApprovalPrompt('force');	
 
 		/*Get File client key name*/
 		$gmail = Gmail::find($gmail_id);
 		$client_key = $gmail->client_key;
 
+
 		$this->client->setAuthConfigFile(public_path().'/uploads/gmail/client_key/'.$client_key);
 		$this->client->addScope(\Google_Service_Blogger::BLOGGER);
 
 		$se = \Session::get('access_token');
+
 		if (isset($se) && $se) {
 
 			if($_SERVER['REQUEST_URI'] == "/favicon.ico") return false;
@@ -316,7 +318,6 @@ class GmailController extends Controller {
 
 
 		} else {
-
 			//$redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php';
 			//dd($redirect_uri);
 			//header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
@@ -324,9 +325,10 @@ class GmailController extends Controller {
 			if (! isset($_GET['code'])) {
 
 				$auth_url = $this->client->createAuthUrl();
-				//dd($auth_url);
-				//header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));
-				return \Redirect::to($auth_url);
+//				dd($auth_url);
+				//$auth_url = 'https://www.google.com.vn';
+				//\Redirect::to($auth_url);
+				//\Redirect::away('http://milon.im');
 			} else {
 				$this->client->authenticate($_GET['code']);
 				$_SESSION['access_token'] = $this->client->getAccessToken();
