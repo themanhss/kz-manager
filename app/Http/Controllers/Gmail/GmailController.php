@@ -238,6 +238,9 @@ class GmailController extends Controller {
 
 	public function postToBlog($gmail_id, $blog_id){
 
+		/*$se = \Session::all();
+		dd($se);*/
+
 		$this->client = new \Google_Client();
 		$this->client->setAccessType('offline');
 		$this->client->setApprovalPrompt('force');	
@@ -246,13 +249,16 @@ class GmailController extends Controller {
 		$gmail = Gmail::find($gmail_id);
 		$client_key = $gmail->client_key;
 
+		\Session::put('client_key',$client_key);
 
 		$this->client->setAuthConfigFile(public_path().'/uploads/gmail/client_key/'.$client_key);
 		$this->client->addScope(\Google_Service_Blogger::BLOGGER);
 
-		$se = \Session::get('access_token');
 
+		$se = \Session::get('access_token');
+//		dd(\Session::all());
 		if (isset($se) && $se) {
+
 
 			if($_SERVER['REQUEST_URI'] == "/favicon.ico") return false;
 
@@ -314,7 +320,7 @@ class GmailController extends Controller {
 
 			curl_close($ch);
 			//$gmail_id = 1;
-			//return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
+			return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
 
 
 		} else {
@@ -325,10 +331,8 @@ class GmailController extends Controller {
 			if (! isset($_GET['code'])) {
 
 				$auth_url = $this->client->createAuthUrl();
-//				dd($auth_url);
 				//$auth_url = 'https://www.google.com.vn';
-				//\Redirect::to($auth_url);
-				//\Redirect::away('http://milon.im');
+				return \Redirect::to($auth_url);
 			} else {
 				$this->client->authenticate($_GET['code']);
 				$_SESSION['access_token'] = $this->client->getAccessToken();
@@ -343,20 +347,38 @@ class GmailController extends Controller {
 	 * Google redirect to if auth success
 	 * param : code
 	 * */
+	public function array_copy($arr) {
+		$newArray = array();
+		foreach($arr as $key => $value) {
+			if(is_array($value)) $newArray[$key] = array_copy($value);
+			else if(is_object($value)) $newArray[$key] = clone $value;
+			else $newArray[$key] = $value;
+		}
+		return $newArray;
+	}
+
 	public function returnSuccess(){
 
 		$code = \Input::get('code');
 
+		$client_key = \Session::get('client_key');
 
 		$this->client = new \Google_Client();
-		$this->client->setAuthConfigFile(public_path().'/keys/client_secret_1016595116679-ihemkgsfn66h8l3h8d0o28ksnm7e5su2.apps.googleusercontent.com.json');
+		$this->client->setAuthConfigFile(public_path().'/uploads/gmail/client_key/'.$client_key);
 		$this->client->addScope(\Google_Service_Blogger::BLOGGER);
 		$this->client->setAccessType("offline");
 
-		$this->client->authenticate($code);
 
-		\Session::put('access_token', $this->client->getAccessToken());
+		$token = $this->client->authenticate($code);
 
+		$b = $this->array_copy($token);
+
+
+		//\Session::set('access_token', $this->client->authenticate($code));
+		\Session::set('access_token', $b);
+
+		//		$temp = \Session::get('access_token');
+//		dd(\Session::all());
 		return redirect()->to('admin/gmails');
 	}
 
