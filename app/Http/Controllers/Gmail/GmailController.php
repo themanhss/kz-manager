@@ -151,7 +151,7 @@ class GmailController extends Controller {
 			$gmail->gmail = $datas['gmail'];
 			$gmail->phone = $datas['phone'];
 
-			if(!$datas['client_key']){
+			if($datas['client_key']){
 				$gmail->client_key = $datas['client_key'];
 			}
 
@@ -256,9 +256,9 @@ class GmailController extends Controller {
 
 
 		$se = \Session::get('access_token');
-//		dd(\Session::all());
-		if (isset($se) && $se) {
 
+
+		if (isset($se) && $se) {
 
 			if($_SERVER['REQUEST_URI'] == "/favicon.ico") return false;
 
@@ -268,7 +268,6 @@ class GmailController extends Controller {
 			//$accessToken = json_decode(\Session::get('access_token'));
 
 			$accessToken = $se['access_token'];
-
 
 			if($this->client->isAccessTokenExpired()) {
 				dd('het han token');
@@ -312,15 +311,15 @@ class GmailController extends Controller {
 
 			curl_exec($ch);
 
-			//var_dump(curl_getinfo($ch,CURLINFO_HEADER_OUT));
+//			var_dump(curl_getinfo($ch,CURLINFO_HEADER_OUT));
 			//echo "<br><br><br>".$data;
-			//echo curl_errno($ch);
+//			echo curl_errno($ch);
 
 			//$response = json_decode($data);
 
 			curl_close($ch);
 			//$gmail_id = 1;
-			return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
+//			return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
 
 
 		} else {
