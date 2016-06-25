@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Blogspot as Blogspot;
 use Validator;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Module;
@@ -37,7 +38,7 @@ class GmailController extends Controller {
 	 * @return Response
 	 */
 	public function index() {
-		$gmails = Gmail::all();
+		$gmails = Gmail::orderBy('last_run', 'asc')->get();
 		return view('backend.gmail.index',['gmails'=> $gmails]);
 	}
 
@@ -231,7 +232,15 @@ class GmailController extends Controller {
 			$this->postToBlog($gmail_id,$blog->blog_id);
 		}
 
-		return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
+		$gmail = Gmail::find($gmail_id);
+		$current_time = Carbon::now()->toDateTimeString();
+		$gmail->last_run = $current_time;
+
+		if($gmail->save()){
+			\Session::forget('access_token');
+			return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
+		}
+
 	}
 
 
