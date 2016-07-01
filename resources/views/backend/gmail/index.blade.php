@@ -6,9 +6,10 @@
             $('#userTable').dataTable({
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "bPaginate": true,
+                "pageLength": 25,
                 "bLengthChange": true,
                 "bFilter": true,
-                "bSort": true,
+                "bSort": false,
                 "bInfo": true,
                 "bAutoWidth": false
             });
@@ -40,10 +41,8 @@
                                        aria-describedby="example1_info">
                                     <thead>
                                     <tr role="row">
-                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                            colspan="1" aria-label="Name: activate to sort column
-                                            ascending">Gmail
-                                        </th>
+                                        <th>Gmail</th>
+                                        <th>Last Run</th>
                                         <th>Total Blogs</th>
                                         <th>Edit</th>
                                         <th>Remove</th>
@@ -59,6 +58,7 @@
                                                         {{$gmail->gmail}}
                                                     </a>
                                                 </td>
+                                                <td>{{$gmail->last_run}}</td>
                                                 <td>
                                                     <?php
                                                         $blogs = $gmail->blogs;
