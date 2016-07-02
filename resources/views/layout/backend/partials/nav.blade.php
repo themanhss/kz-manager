@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="/admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini">IAG</span>
+        <span class="logo-mini">Kz</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>IAG</b></span>
+        <span class="logo-lg"><b>Kz Manager</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -35,7 +35,7 @@
                             @endif
 
                             <p>
-                                {{$user->firstName.' '.$user->lastName}} - Admin IAG
+                                {{$user->firstName.' '.$user->lastName}}
                             </p>
                         </li>
                         <!-- Menu Footer-->

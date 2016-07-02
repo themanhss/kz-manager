@@ -37,50 +37,34 @@
             <li class="{{$active_gmails?'active':'' }}">
                 <a href="{{url('admin/gmails')}}">
                     <i class="fa fa-dashboard"></i>
-                    <span>Blogspots</span>
+                    <span>Google</span>
                 </a>
             </li>
 
-            @if($user->isSuperAdmin == 1)
-                <?php
-                if (strpos(Route::getCurrentRoute()->getPath(), 'admin/themes') !== false) {
-                    $active_themes = true;
-                }else{
-                    $active_themes = false;
-                }
-                ?>
-                <li class="{{$active_themes?'active':'' }}">
-                    <a href="{{url('admin/themes')}}">
-                        <i class="fa fa-cogs"></i>
-                        <span>Themes</span>
-                    </a>
-                </li>
-            @endif
-
             <?php
-            if (strpos(Route::getCurrentRoute()->getPath(), 'admin/customers') !== false) {
-                $active_customer = true;
+            if (strpos(Route::getCurrentRoute()->getPath(), 'admin/blogs') !== false) {
+                $active_blog = true;
             }else{
-                $active_customer = false;
+                $active_blog = false;
             }
             ?>
-            <li class="{{$active_customer?'active':'' }}">
-                <a href="{{url('admin/customers')}}">
+            <li class="{{$active_blog?'active':'' }}">
+                <a href="{{url('admin/blogs')}}">
                     <i class="fa fa-th"></i>
-                    <span>Customers</span>
+                    <span>Blogs</span>
                 </a>
             </li>
             <?php
-            if (strpos(Route::getCurrentRoute()->getPath(), 'admin/leads') !== false) {
-                $active_leads = true;
+            if (strpos(Route::getCurrentRoute()->getPath(), 'admin/blocks') !== false) {
+                $active_crawler = true;
             }else{
-                $active_leads = false;
+                $active_crawler = false;
             }
             ?>
-            <li class="{{$active_leads?'active':'' }}">
-                <a href="{{url('admin/leads')}}">
+            <li class="{{$active_crawler?'active':'' }}">
+                <a href="{{url('admin/blocks')}}">
                     <i class="fa fa-share"></i>
-                    <span>Enquiries</span>
+                    <span>Crawlers</span>
                 </a>
             </li>
 

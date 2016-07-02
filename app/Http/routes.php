@@ -51,18 +51,23 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('gmails', 'Gmail\GmailController@index');
     Route::any('gmails/create', 'Gmail\GmailController@create');
     Route::any('gmails/{gmail_id}/edit', 'Gmail\GmailController@edit');
-
     Route::any('gmails/{gmail_id}/post-all-blog', 'Gmail\GmailController@postAllBlog');
 
-
     // Blogspot Manager
-
     Route::get('gmails/{gmail_id}/blogspots', 'Gmail\GmailController@blogspot');
-
     Route::any('gmails/{gmail_id}/blogspot/create', 'Gmail\GmailController@createBlogspot');
-
-
     Route::get('gmails/{gmail_id}/blogspots/{blog_id}/run', 'Gmail\GmailController@postToBlog');
+
+    // Blog Manager
+    Route::get('blogs', 'Blog\BlogController@index');
+    Route::any('blogs/create', 'Blog\BlogController@create');
+    Route::any('blogs/{blog_id}/edit', 'Blog\BlogController@edit');
+
+    // Block Manager
+    Route::get('blocks', 'Crawler\BlockController@index');
+    Route::any('blocks/create', 'Crawler\BlockController@create');
+    Route::any('blocks/{block_id}/edit', 'Crawler\BlockController@edit');
+    Route::any('blocks/{block_id}/detail', 'Crawler\BlockController@detailBlock');
 
 
 });
