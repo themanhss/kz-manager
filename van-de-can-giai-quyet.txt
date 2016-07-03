@@ -1,0 +1,10 @@
+- them phan "read more" vao phan dau
+- luu anh vao server host chinh blog do
+- assign cho tung danh muc trong bai viet cho tung website
+- remove tat ca link trong content lay dc
+- chen backlink vao bai viet
+- tu dong them internal link
+- loc bai viet da lay thi ko crawler nua
+
+
+

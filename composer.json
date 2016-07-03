@@ -11,7 +11,9 @@
         "mitulgolakiya/laravel-api-generator": "1.3.*",
         "maatwebsite/excel": "~2.1.0",
         "skovmand/mailchimp-laravel": "1.*",
-        "mbarwick83/shorty": "^1.0"
+        "mbarwick83/shorty": "^1.0",
+        "yangqi/htmldom": "dev-master",
+        "jgrossi/corcel": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

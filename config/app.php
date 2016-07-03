@@ -155,7 +155,8 @@ return [
          * Import Mailchimp-laravel
          * */
         Skovmand\Mailchimp\MailchimpServiceProvider::class,
-        Mbarwick83\Shorty\ShortyServiceProvider::class
+        Mbarwick83\Shorty\ShortyServiceProvider::class,
+        'Yangqi\Htmldom\HtmldomServiceProvider',
     ],
 
     /*
@@ -204,7 +205,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-        'Shorty'    => Mbarwick83\Shorty\Facades\Shorty::class
+        'Shorty'    => Mbarwick83\Shorty\Facades\Shorty::class,
+        'Htmldom' => 'Yangqi\Htmldom\Htmldom',
     ],
 
 ];

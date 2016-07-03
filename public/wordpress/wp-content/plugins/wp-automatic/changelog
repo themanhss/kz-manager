@@ -1,0 +1,262 @@
+Fix: very long keywords was giving no links found message now fixed
+Fix: eBay description iframe height was set to 10000 now lowered
+Fix: instagram title now does not contain [embed shortcode
+Fix: duplicate campaign
+
+@1 September 2015 v3.15.0
+NEW: Twitter campaigns to post from twitter
+NEW: Duplicate campaign option so now you can duplicate any campaign just hover it's title and click the duplicate link
+NEW: New feeds option to get the featured image from the og:image tag that is used by sites for FB
+NEW: new ebay option to redirect to a specific page if the posted item expiry date was reached.
+NEW: now you can use Emojis at the post template 
+NEW: NewsTube theme support out of the box to post Youtube/Vimeo videos.
+NEW: new youtube tag [vid_author_title]
+
+
+Fix: Youtube comments now using the official api
+Fix: now posted box only contains latest 10 posted posts with a button to load more.
+Fix: translation sometimes generates a square tags including like this [19459million] now fixed and fixed for russian language
+Fix: Amazon add to chart option was always using amazon.com now fixed.
+Fix: Limit of posts to post increased to 1 million per campaign.
+Fix: Facebook set date as published date now consider the timezone of WP.
+Fix: invalid utf8 chars now get detected and fixed in post content/title
+Fix: feeds module og:image extraction more accurate
+
+@17 August 2015 v3.14.0
+NEW: Now instagram videos get embeded to the post
+NEW: new feature to set a secret word for the cron job at the settings page
+NEW: feeds new option to skip items with title that already exists for a post 
+Fix:Translation now working again after stopping working.
+Fix:Facebook posting fix
+Fix:Amazon price woo-commerce truncation error fixed 
+
+
+@11 July 2015 v3.13.0
+New: pin_link tag added to pinterest post template so it can point to the source directly
+New: new option to serve featured image from it's source without saving it to the server
+NEW: new option to randomly pick tags from set tags as tags
+NEW: TrueMag vimeo integration
+Fix: Facebook module rewritten with improvements like largest size available images, strip too small images and a margin between images.
+Fix: Ezinearticles author link fix
+Fix: Pinterest title with hashtag was broken. now fixed
+Fix: Content tags can now be used at post title template without problems
+Fix: single item in the TBS protected terms was not getting protected now fixed
+Fix: Feeds campaign set categories feature sometimes generated fatal error now fixed
+Improved: html tags now get removed from title
+Improved: changed default SimplePie
+Improved: youtube now posts the maximum resultion image if found as featured image
+Improved: scripts tags now get stripped by defualt  
+Removed: Strip inline links cause of users are misusing it
+
+
+@4 June 2015 v3.12.0
+NEW: WPML support so now you can set the language of the new posts
+NEW: protect html tags in search and replace feeds campaign option added
+Fix: Facebook video render now works after a minor FB change
+Fix: Youtube duplicate posts after the v3 api upgrade now fixed
+Fix: translation module improvements 
+Fix: decode html entities option fix 
+Fix: now custom fields values can contain single and double quotes or even a serialized array
+Fix: internal server error fixed for windows servers when re-saving a campaign 
+
+@22 MAY v3.11.0
+NEW: instagram now got supported so you can post instagram images for a tag or a user.
+Fix: Flicker license was not working with keywords with spaces now working.
+Fix: Trim post title sometimes caused issues when last trimmed char was a multibyte now fixed.
+
+@16 MAY v3.10.0
+Fix: youtube posting got upgraded to v3 api with various new options  
+NEW: Pinterest campaigns added to post from pinterest to wordpress
+NEW: New feed tag to extract the enclusure link
+NEW: New flicker license type option
+
+
+@27 APRIL v3.9.0
+New: Vimeo camaigns added
+NEW: amazon.in now integrated
+NEW: new option for setting refer to the source site when caching images
+NEW: new option for amazon campaign to optionally create the short description
+NEW: new option to strip inline links texts in content 
+Fix: replace keyword with specified link fixed was replacing parts of words
+Fix: now caching images and thumbnails keep records  of already cached items not to cache same image twice
+Fix: relative links now points to source host when extracting using id/class/regex etc
+
+@7 Apr 2015  v3.8
+NEW: Facebook campaigns now added so you can now post from facebook to wordpress
+NEW: eBay now integrates with woo-commerce to directly link items via the buy now button
+NEW: nospin tag added to skip spinning parts of content 
+NEW: option to decode html entities from feeds
+NEW: the plugin can now process feed enclosure for featured image if no image elsewhere exists
+NEW: Feeds campaign now can extract the real author of the post and assign to the same author locally or create a new one if not exists
+NEW: TrueMag theme on the fly settings now get added
+
+
+Fix: cache images with spaces , encoded sources now works 
+Fix: youtube rating images stopped displaying now fixed
+Fix: feeds with items with empty title was stopping the feed from processing now fixed to skip no title feeds items
+Fix: campaign editing/adding gave 500 http error with windows platforms now fixed
+Fix: html encoded image srcs now fixed for thumbnail setting and caching 
+Fix: clear refer value at caching images
+Fix: TBS were deforming encoded html entities now fixed.
+Fix: ad_1, ad_2 now does not appear at feed items
+
+@25/1/2015 v3.7.3
+Fix: Norwegian language translating was not working now fixed
+Fix: jetpack auto publicize feature stopped working now fixed
+
+@14/1/2015 v3.7.2
+Improvement: cURL exist check added.
+Fix: getpack stats stopped working due to a conflict. now working
+Fix: double check duplicate before posting 
+Fix: entity_decode urls before extracting content from feeds
+
+
+@17/12/2014 v3.7.1
+Bug fix: amazon products [product_link] tag stopped working now it is back
+
+@16/12/2014 v3.7
+NEW: option to add amazon add to chart url
+NEW: option to search and replace by REGEX for each campaign
+NEW: option to extract tags by id/class and set them as tags
+NEW: TBS protected terms option added to settings
+FIX: title can now contain more than 150 chars
+FIX: using TBS without checking it for some campaigns now fixed
+Fix: featured image with spaces after src attribute were not detected not it does
+Fix: option to select multiple categories
+Fix: users with open base dir set can now have clickbank product image without problem
+Fix: https images from feeds now works fine
+Fix: translate were generating numbers in some cases now fixed
+Fix: translate were generating unexpected input with encoded charachters like &euoro; now fixed
+Fix: fetch full content titles with colons were truncated now fixed
+Fix: opttion to strip links didn't work with flicker items now it works
+
+
+@2/11/2014 v3.6
+NEW: post from a youtube playlist
+NEW: feed extract content using xpath
+NEW: set feed posts categories to original post categories
+NEW: amazon full woo-commerce integration
+NEW: multi level spinning support
+NEW: strip content using id/class
+NEW: extract first match only option
+NEW: extract inner content instead of outer content
+NEW: skip featured image if below 100px width
+NEW: graph og image
+NEW: vid_duration tag for youtube vids
+NEW: custom post tags
+NEW: Limit title chars to xx chars
+NEW: set canonical tag
+FIX: curl follocation for openbasedir
+FIX: feed posts with relative urls now mathch to the source
+Fix: some js code sometimes appears when using fetch full content now stripped
+Fix: keywords not saving with some themes
+Fix: ebay duplicate were deleting most posts even they were not duplicate
+Fix: amazon GPB numeric fix
+
+@13/9/2014 v3.5.1
+Fix: Clickbank Featured image now get set 
+Fix: ezinearticles showed some google mobile ads now it don't
+Fix: ezinearticles module recoded
+Fix: images with space in it's source url now get cached without problem 
+Fix: set random image if no image exists sometimes ignore images in original post and always set one of the random. now fixed
+ 
+
+@9/9/2014 v3.5
+NEW: Spintax campaign type
+NEW: ebay custom category id
+NEW: new post preview on edit page
+NEW: Rotate Feeds option
+NEW: Random featured image
+NEW: amazon browse node without keyword filtering
+NEW: amazon sort results
+NEW: Youtube minimum vid date added 
+NEW: Feeds minimum vid date added
+NEW: Reverse order of items youtube and feeds 
+
+Fix: ebay keywords with spaced were generating errors now fixed by encoding 
+Fix: clickbank password wiht special chars get encoded
+Fix: image caching using curl instead of file_get_Contents
+Fix: translate second time was translating from first language to thired language
+Fix: removed tidy that caused broken images html
+Fix: Youtube duplicate posts 
+Fix: attachment guid
+Fix: amazon keyword was urlencoded twice . 
+Fix: Readability mb_encoding function not exists fix 
+Fix: Readability remove styles disabled
+Fix: Striping links from the post 
+Fix: general table encoding to utf
+
+
+@23/7/2014 v3.4.0
+NEW: amazon it es etc (Not fully compatible)
+NEW: amazon artist , actor .. etc search
+NEW: REGEX support
+NEW: TBS REPORT success or fail
+NEW: New id/class rule 3
+Fix : remove_filter('content_save_pre', 'wp_filter_post_kses'); that removes iframe and js when posting from cron
+Fix : ui keyword field * when uncheck the post all without filtering fixed
+Fix : youtube non caching index now starts at 1
+Fix : Flicker ssl required 
+Fix : base 48 encode for camp_general
+Fix : strip first image was stripping all images
+Fix : clickbank extraction correction
+Fix : wp_automatic_log cleaning
+
+@29/3/2014 v3.3.0 
+Fix: Articles module
+ADD: Strip first image after setting as featured image option
+Fix: Amazon no thumbnail product fixed
+Improvment : youtube featured image now get set
+ADD : youtube tag vid_id
+Improvement: clear feed cache
+Fix : cache images with + _ marks
+Improvment : amazon products with no list price now gets price from offer summary
+Rotate keywords
+Full youtube description
+youtube tags as wordpress tags
+youtube comments as wordpress comments
+
+
+@23/3/2013 v3.2.0
+Fix : amazon custom fields fix 
+Fix : translation module fix
+Fix : skip posts without images
+Added : by class or id extraction
+
+
+@3/3/2013 v3.1.1
+New : Skip posts without images option for feeds campaigns 
+Fix : youtube post getting method resetting index to 1 if exhausted when no caching .
+Fix : Articles module webcrawler .
+
+v3.1.0
+Add : limit post content to xx charachters .
+Add : custom post formats support .
+Fix : youtube links cache mixing now fixed .
+Fix : bug with search and replace
+
+
+v3.0.1
+Fix : backward comptability with older post type
+
+v3.0
+New version 
+
+v2.1.2
+Fix : articles module now working
+Fix : Maximum number display now shows max
+
+
+v2.1.1
+New Feature : added proxy authentication ip:port:username:password
+Fix : articles module now works fine as bing changed 
+
+#v2.1.0
+@18/6/2013
+New Feature : amazon now use .com , .ca , .co.uk ..etc .
+
+
+#v2.0.11
+@14/6/2013
+bug fix : file gcomplete was generating error because the selector was returning null . fixed file 'js/jquery.gcomplete' 
+bug fix : plugin was not accepting non-english chars and converting them to ?? . fixed by changing encodeing to utf 

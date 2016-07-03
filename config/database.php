@@ -64,6 +64,19 @@ return [
             'strict'    => false,
         ],
 
+        'wordpress' => [ // this is your Corcel database connection, where WordPress tables are
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'wordpress',
+            'username'  => 'root',
+            'password'  => '',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => 'wp_',
+            'strict'    => false,
+            'engine'    => null,
+        ],
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST'),

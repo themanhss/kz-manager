@@ -1,0 +1,17 @@
+Trans Id	Date	Stat	Product ID	Product Name	Price	Vendor	Affiliate	Fee Paid By Vendor	$ To Vendor	$ To Affiliate	Customer Name	Customer Email
+4026827	08/31/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	omer simanovsky	omer@globalfinanceschool.com
+4030614	09/08/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	Tristan Michaelis	PPD@gaminghacks24.com
+4030420	09/08/14	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	omer simanovsky	omer@globalfinanceschool.com
+4036349	09/19/14	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	Tristan Michaelis	PPD@gaminghacks24.com
+4036723	09/20/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	Muh Ikhsan	muhikhsan1@gmail.com
+4041337	09/28/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	Kory Lee Kaai	email@korykaai.com
+4046079	10/06/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	Monica Simkevicius Scha	marcosolidbr@hotmail.com
+4046046	10/06/14	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	Muh Ikhsan	muhikhsan1@gmail.com
+4046576	10/07/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	Robert Gelhausen	thecompelstore@gmail.com
+4049102	10/12/14	Sale	95330	The Best Spinner	$7.00	egold	sweetheatmn	$1.00	$3	$3.00	Siddique Ameen	sid.ameen@gmail.com
+4052745	10/20/14	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	Siddique Ameen	sid.ameen@gmail.com
+4117101	05/25/15	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	George Gericke	george@restrive.co.za
+4129037	07/19/15	Refund	95330	The Best Spinner	$-77.00	egold	sweetheatmn	$-3.00	$-37	$-37.00	Andrew McCants	andrew.mccants@gmail.com
+4128922	07/19/15	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	Andrew McCants	andrew.mccants@gmail.com
+4134965	08/20/15	Sale	95330	The Best Spinner	$77.00	egold	sweetheatmn	$3.00	$37	$37.00	william hooey	whooey@rogers.com
+Profit								$0	$0	$243	Total Net	$243

@@ -68,6 +68,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::any('blocks/create', 'Crawler\BlockController@create');
     Route::any('blocks/{block_id}/edit', 'Crawler\BlockController@edit');
     Route::any('blocks/{block_id}/detail', 'Crawler\BlockController@detailBlock');
+    Route::any('blocks/{block_id}/delete', 'Crawler\BlockController@delete');
+    Route::any('blocks/{block_id}/run', 'Crawler\BlockController@runCraw');
 
 
 });

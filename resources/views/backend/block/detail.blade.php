@@ -5,6 +5,7 @@
         <h1>
             View Block
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a type="button" href="/admin/blocks/{{$block->id}}/edit" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Edit Block</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a type="button" href="/admin/blocks/{{$block->id}}/run" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Run Craw</a>
         </h1>
 
     </section>
