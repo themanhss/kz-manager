@@ -253,9 +253,10 @@ class BlockController extends Controller {
 			}
 
 			$post['content'] = $element->innertext; // Lấy toàn bộ phần html
+			$post['content'] = preg_replace('#<a.*?>(.*?)</a>#i', '\1', $post['content']);
 
 			// Find all images
-			foreach($element->find('img') as $img) {
+			/*foreach($element->find('img') as $img) {
 				$img_link = $img->src;
 				$img_link = strtok($img_link, '?');
 
@@ -263,25 +264,16 @@ class BlockController extends Controller {
 				$ct = count($url_arr);
 				$name = $url_arr[$ct-1];
 
-				// $name = iconv("UTF-8", "ISO-8859-1", $name);
-
-
 				copy($img_link, $name);
 
-				/*//Get the file
-                $content = file_get_contents($img_link);
-
-
-                //Store in the filesystem.
-                $fp = fopen($name, "w");
-                fwrite($fp, $content);
-                fclose($fp);*/
-
-			};
+			};*/
 
 
 		}
 
+		/*
+		 * Insert vao blog
+		 * */
 		$val = array(
 			'post_title'    => $post['title'],
 			'post_content'  => $post['content'],
@@ -290,9 +282,36 @@ class BlockController extends Controller {
 			'post_category' => array( 2 )
 		);
 
-		$posts = \wp_insert_post($val);
+
+		// usage
+		if( $this->wp_exist_post_by_title( $post['title'] ) ) {
+			$posts = null;
+		} else {
+			$posts = \wp_insert_post($val);
+		}
+
+
+
 		if($posts) {
-			return redirect()->action('Crawler\BlockController@index');
+			dd(1);
+			//return redirect()->action('Crawler\BlockController@index');
+		}else{
+			dd(0);
+		}
+
+	}
+
+	/*
+	 * Check if post exist
+	 * */
+	public function wp_exist_post_by_title( $title ) {
+		global $wpdb;
+		$return = $wpdb->get_row( "SELECT ID FROM wp_posts WHERE post_title = '" . $title . "' && post_status = 'publish' && post_type = 'post' ", 'ARRAY_N' );
+		if( empty( $return ) ) {
+			return false;
+		} else {
+			return true;
 		}
 	}
+
 }

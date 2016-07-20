@@ -71,7 +71,7 @@
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a target="_blank" href="/admin/blocks/{{$block->id}}/run">
+                                                    <a  href="/admin/blocks/{{$block->id}}/run">
                                                         <button type="button" class="btn btn-block btn-sm btn-primary">Run</button>
                                                     </a>
                                                 </td>

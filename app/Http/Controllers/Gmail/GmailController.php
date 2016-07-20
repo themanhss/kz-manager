@@ -232,6 +232,10 @@ class GmailController extends Controller {
 			$this->postToBlog($gmail_id,$blog->blog_id);
 		}
 
+		foreach ($blogs as $blog){
+			$this->postToBlog($gmail_id,$blog->blog_id);
+		}
+
 		$gmail = Gmail::find($gmail_id);
 		$current_time = Carbon::now()->toDateTimeString();
 		$gmail->last_run = $current_time;
