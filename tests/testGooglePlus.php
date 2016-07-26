@@ -5,22 +5,33 @@ use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 
-use App\Models\Gmail as Gmail;
 /**
  * Description of testAdminLogin
  *
  * @author linhnp
  */
-class testGooglePlus extends PHPUnit_Framework_TestCase {
+class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
 
     /**
      * @var RemoteWebDriver
      */
     protected $webDriver;
 
+  public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+        return $app;
+    }
 
     public function setUp()
     {
+
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', DesiredCapabilities::chrome());
 
@@ -28,40 +39,58 @@ class testGooglePlus extends PHPUnit_Framework_TestCase {
 
     public function tearDown()
     {
-//        $this->webDriver->quit();
+       $this->webDriver->quit();
     }
 
     public function testAutoPlus()
     {
-        $gmails = App\Models\Gmail::all();
 
-        foreach ($gmails as $key=>$gmail) {
+         $links = App\Models\Link::all();
+         
 
-           $url = 'https://plus.google.com/share?url=http://kiza.vn/blog/danh-rieng-cho-nhung-co-nang-cuong-mau-xanh/';
-           $this->webDriver->get($url);
+        foreach ($links as $key=>$link) {
 
-           $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
-           $username->sendKeys('themanhss');
+        $url = 'https://plus.google.com/share?url='.$link->url;
+        $this->webDriver->get($url);
 
-           $next = $this->webDriver->findElement(WebDriverBy::id('next'));
-           $next->click();
+           if($key == 0) {
 
-           $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+              $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
+               if ($username->isDisplayed()) {
+                   $username->sendKeys('themanhss');
+                }
+           
 
-           $this->webDriver->findElement(WebDriverBy::id("Passwd"))->sendKeys("themanh2311");
+               $next = $this->webDriver->findElement(WebDriverBy::id('next'));
+               if ($next->isDisplayed()) {
+                   $next->click();
+                }
+               
 
-           $signIn = $this->webDriver->findElement(WebDriverBy::id('signIn'));
-           $signIn->click();
+                 
+                 $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                 $pw = $this->webDriver->findElement(WebDriverBy::id("Passwd"));
 
+                 if ($pw->isDisplayed()) {
+                     $pw->sendKeys("themanh2311");
+                  }else{
+                    $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                    $pw->sendKeys("themanh2311");
+                  }
+
+
+                 $signIn = $this->webDriver->findElement(WebDriverBy::id('signIn'));
+                 if ($signIn->isDisplayed()) {
+                     $signIn->click();
+                  }
+           }
+          /*end check $k=0*/
+           
 
            $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
         }
 
-
-
-
     }
-
 
 
 }

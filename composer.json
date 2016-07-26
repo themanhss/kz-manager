@@ -13,7 +13,9 @@
         "skovmand/mailchimp-laravel": "1.*",
         "mbarwick83/shorty": "^1.0",
         "yangqi/htmldom": "dev-master",
-        "jgrossi/corcel": "^1.1"
+        "jgrossi/corcel": "^1.1",
+        "aindong/pluggables": "~1.0",
+        "caffeinated/modules": "~2.0"   
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -28,7 +30,8 @@
     "autoload": {
         "classmap": [
             "database",
-            "vendor/google/apiclient/src/Google"
+            "vendor/google/apiclient/src/Google",
+             "tests/TestCase.php"
         ],
         "psr-4": {
             "App\\": "app/"

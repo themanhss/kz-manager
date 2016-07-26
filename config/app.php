@@ -136,6 +136,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Aindong\Pluggables\PluggablesServiceProvider::class,
+        Caffeinated\Modules\ModulesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -207,6 +209,8 @@ return [
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
         'Shorty'    => Mbarwick83\Shorty\Facades\Shorty::class,
         'Htmldom' => 'Yangqi\Htmldom\Htmldom',
+        'Pluggables' => Aindong\Pluggables\Facades\Pluggable::class,
+        'Module' => Caffeinated\Modules\Facades\Module::class
     ],
 
 ];
