@@ -58,6 +58,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::any('gmails/{gmail_id}/blogspot/create', 'Gmail\GmailController@createBlogspot');
     Route::get('gmails/{gmail_id}/blogspots/{blog_id}/run', 'Gmail\GmailController@postToBlog');
 
+    Route::any('gmails/{gmail_id}/blogspots/get-token', 'Gmail\GmailController@getToken');
+
     // Blog Manager
     Route::get('blogs', 'Blog\BlogController@index');
     Route::any('blogs/create', 'Blog\BlogController@create');

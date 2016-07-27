@@ -23,6 +23,10 @@
             Blogspot &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <a type="button" href="/admin/gmails/{{$gmail_id}}/blogspot/create" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Add more blogspot</a>
+            &nbsp;&nbsp;&nbsp;
+            <a type="button" href="/admin/gmails/{{$gmail_id}}/blogspots/get-token" id="getTockenBtn" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Get Token</a>
+            &nbsp;&nbsp;&nbsp;
+            <a type="button" href="/admin/gmails/{{$gmail_id}}/post-all-blog" id="postAllBlog" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp;&nbsp;Post To All Blogspot</a>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>

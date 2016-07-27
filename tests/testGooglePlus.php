@@ -45,7 +45,7 @@ class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
     public function testAutoPlus()
     {
 
-         $links = App\Models\Link::all();
+        $links = App\Models\Link::all();
          
 
         foreach ($links as $key=>$link) {

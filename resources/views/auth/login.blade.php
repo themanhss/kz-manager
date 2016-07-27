@@ -35,12 +35,12 @@
                 <form action="{{ url('/auth/login') }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="Email" name="email" value="{{old('email')}}" />
+                        <input type="text" id="Email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}" />
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Password" name="password" />
+                        <input type="password" id="Password" class="form-control" placeholder="Password" name="password" />
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                     </div>
@@ -54,7 +54,7 @@
                         </div>--}}
 
                         <div class="col-xs-4 login-btn">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                            <button type="submit" id="submitBtn" class="btn btn-primary btn-block btn-flat">Login</button>
                         </div><!-- /.col -->
                     </div>
                 </form>

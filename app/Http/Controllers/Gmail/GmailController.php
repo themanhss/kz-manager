@@ -232,10 +232,6 @@ class GmailController extends Controller {
 			$this->postToBlog($gmail_id,$blog->blog_id);
 		}
 
-		foreach ($blogs as $blog){
-			$this->postToBlog($gmail_id,$blog->blog_id);
-		}
-
 		$gmail = Gmail::find($gmail_id);
 		$current_time = Carbon::now()->toDateTimeString();
 		$gmail->last_run = $current_time;
@@ -263,6 +259,7 @@ class GmailController extends Controller {
 		$client_key = $gmail->client_key;
 
 		\Session::put('client_key',$client_key);
+
 
 		$this->client->setAuthConfigFile(public_path().'/uploads/gmail/client_key/'.$client_key);
 		$this->client->addScope(\Google_Service_Blogger::BLOGGER);
@@ -353,6 +350,43 @@ class GmailController extends Controller {
 				//header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
 			}
 		}
+	}
+
+	/*Get Token*/
+
+	public function getToken($gmail_id){
+		// Forget access_token
+		\Session::forget('access_token');
+
+		// get Token from google
+		$this->client = new \Google_Client();
+		$this->client->setAccessType('offline');
+		$this->client->setApprovalPrompt('force');
+
+		/*Get File client key name*/
+		$gmail = Gmail::find($gmail_id);
+		$client_key = $gmail->client_key;
+
+		\Session::put('client_key',$client_key);
+
+
+		$this->client->setAuthConfigFile(public_path().'/uploads/gmail/client_key/'.$client_key);
+		$this->client->addScope(\Google_Service_Blogger::BLOGGER);
+
+
+		if (! isset($_GET['code'])) {
+
+			$auth_url = $this->client->createAuthUrl();
+			return \Redirect::to($auth_url);
+		} else {
+			echo 3;die();
+			$this->client->authenticate($_GET['code']);
+			$_SESSION['access_token'] = $this->client->getAccessToken();
+			dd($_SESSION['access_token']);
+			$redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+			//header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+		}
+
 	}
 
 	/*
