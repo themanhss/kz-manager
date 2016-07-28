@@ -46,12 +46,18 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
     {
         $gmails = App\Models\Gmail::all();
 
-        foreach ($gmails as $key=>$gmail) {
+        foreach ($gmails as $key => $gmail) {
 
-            $url = 'http://kz-manager.com/admin/gmails/'.$gmail->id.'/blogspots';
-            $this->webDriver->get($url);
+            $url = 'http://kz-manager.com/admin/gmails/' . $gmail->id . '/blogspots';
 
-            if($key == 0) {
+            if ($key > 0) {
+                $redirect_to = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=' . $url;
+                $this->webDriver->get($redirect_to);
+            }else{
+                $this->webDriver->get($url);
+            }
+
+            if ($key == 0) {
 
                 $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
                 $username->sendKeys('1');
@@ -73,20 +79,40 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
             $getTocken = $this->webDriver->findElement(WebDriverBy::id('getTockenBtn'));
             $getTocken->click();
 
+            // Dang nhap vao tai khoan khac tu lan thu 2
+
+            if($key == 1){
+
+
+                $this->webDriver->findElement(WebDriverBy::id('account-chooser-link'))->click();;
+
+                sleep(2);
+
+                $this->webDriver->findElement(WebDriverBy::id('account-chooser-add-account'))->click();
+            }
+
+            if($key > 1) {
+                sleep(2);
+
+                $this->webDriver->findElement(WebDriverBy::id('account-chooser-add-account'))->click();
+            }
+
+
+
+
             // auth google
             $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
             if ($username->isDisplayed()) {
                 $username->sendKeys($gmail->gmail);
             }
 
-
+            $this->webDriver->manage()->timeouts()->implicitlyWait(5);
             $next = $this->webDriver->findElement(WebDriverBy::id('next'));
             if ($next->isDisplayed()) {
                 $next->click();
             }
 
 
-            $this->webDriver->manage()->timeouts()->implicitlyWait(10);
             $pw = $this->webDriver->findElement(WebDriverBy::id("Passwd"));
             $this->webDriver->manage()->timeouts()->implicitlyWait(10);
             $pw->sendKeys("themanh2311");
@@ -97,27 +123,24 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
                 $signIn->click();
             }
 
-            sleep(3);
+
+            sleep(2);
             // click "Cho phep" btn
             $this->webDriver->findElement(WebDriverBy::id('submit_approve_access'))->click();
 
+
+            sleep(2);
+
             $this->webDriver->get($url);
 
-            sleep(3);
+            sleep(2);
 
             $this->webDriver->findElement(WebDriverBy::id('postAllBlog'))->click();
 
-            sleep(60);
-            /*$this->webDriver->wait(120, 500)->until(
-                function ($url) {
-                    return $this->webDriver->getCurrentURL() === $url;
-                }
-            );*/
+    //            sleep(30);
+                sleep(5);
 
         }
-
-
     }
-
 
 }

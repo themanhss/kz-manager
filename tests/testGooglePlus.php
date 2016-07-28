@@ -51,7 +51,7 @@ class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
         foreach ($links as $key=>$link) {
 
         $url = 'https://plus.google.com/share?url='.$link->url;
-        $this->webDriver->get($url);
+            $this->webDriver->get($url);
 
            if($key == 0) {
 
