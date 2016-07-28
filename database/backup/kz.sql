@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : local
-Source Server Version : 50505
+Source Server Version : 50621
 Source Host           : localhost:3306
 Source Database       : kz
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-07-21 00:31:59
+Date: 2016-07-28 17:11:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -192,18 +192,40 @@ CREATE TABLE `gmails` (
 -- ----------------------------
 -- Records of gmails
 -- ----------------------------
-INSERT INTO `gmails` VALUES ('1', 'themanhss@gmail.com', null, '29972.json', null, '2016-07-12 17:08:45', null, '0000-00-00 00:00:00', '2016-07-12 17:08:45', null);
-INSERT INTO `gmails` VALUES ('2', 'iag.dev2016@gmail.com', '', '62692.json', null, '2016-07-12 17:06:20', null, '0000-00-00 00:00:00', '2016-07-12 17:06:20', null);
-INSERT INTO `gmails` VALUES ('3', 'theman2311@gmail.com', '968332556', '57592.json', null, '2016-07-12 17:04:36', null, '2016-06-19 03:59:21', '2016-07-12 17:04:36', null);
-INSERT INTO `gmails` VALUES ('6', 'vinhbao.love09@gmail.com', '', '19669.json', null, '2016-07-12 16:59:18', null, '2016-06-20 17:57:03', '2016-07-12 16:59:18', null);
-INSERT INTO `gmails` VALUES ('7', 'kiza.vn@gmail.com', '', '52631.json', null, '2016-07-12 17:15:05', null, '2016-06-22 17:28:09', '2016-07-12 17:15:05', null);
-INSERT INTO `gmails` VALUES ('8', 'daokimdung201192@gmail.com', '', '60940.json', null, '2016-07-12 16:53:40', null, '2016-06-22 18:01:12', '2016-07-12 16:53:40', null);
-INSERT INTO `gmails` VALUES ('9', 'haiphong.love09@gmail.com', '', '85207.json', null, '2016-07-12 17:03:38', null, '2016-06-22 18:03:41', '2016-07-12 17:03:38', null);
-INSERT INTO `gmails` VALUES ('10', 'hangnguyen.love09@gmail.com', '', '18684.json', null, '2016-07-12 16:54:41', null, '2016-06-22 18:07:24', '2016-07-12 16:54:41', null);
-INSERT INTO `gmails` VALUES ('11', 'huonggiang.love09@gmail.com', '', '56222.json', null, '2016-07-12 17:19:56', null, '2016-06-22 18:09:40', '2016-07-12 17:19:56', null);
-INSERT INTO `gmails` VALUES ('12', 'vinhan.love09@gmail.com', '', '34236.json', null, '2016-07-12 17:20:27', null, '2016-06-22 18:12:43', '2016-07-12 17:20:27', null);
-INSERT INTO `gmails` VALUES ('13', 'langson.love09@gmail.com', '', '23600.json', null, '2016-07-12 17:17:37', null, '2016-06-22 18:15:50', '2016-07-12 17:17:37', null);
-INSERT INTO `gmails` VALUES ('14', 'manhbk.love09@gmail.com', '', '64558.json', null, '2016-07-12 17:16:16', null, '2016-06-22 18:19:01', '2016-07-12 17:16:16', null);
+INSERT INTO `gmails` VALUES ('1', 'themanhss@gmail.com', null, '29972.json', null, '2016-07-28 04:02:46', null, '0000-00-00 00:00:00', '2016-07-28 04:02:46', '2016-06-22 18:15:50');
+INSERT INTO `gmails` VALUES ('2', 'iag.dev2016@gmail.com', '', '62692.json', null, '2016-07-28 03:57:41', null, '0000-00-00 00:00:00', '2016-07-28 03:57:41', null);
+INSERT INTO `gmails` VALUES ('3', 'theman2311@gmail.com', '968332556', '57592.json', null, '2016-07-12 17:04:36', null, '2016-06-19 03:59:21', '2016-07-12 17:04:36', '2016-06-22 18:15:50');
+INSERT INTO `gmails` VALUES ('6', 'vinhbao.love09@gmail.com', '', '19669.json', null, '2016-07-28 05:02:17', null, '2016-06-20 17:57:03', '2016-07-28 05:02:17', null);
+INSERT INTO `gmails` VALUES ('7', 'kiza.vn@gmail.com', '', '52631.json', null, '2016-07-12 17:15:05', null, '2016-06-22 17:28:09', '2016-07-12 17:15:05', '2016-06-22 18:15:50');
+INSERT INTO `gmails` VALUES ('8', 'daokimdung201192@gmail.com', '', '60940.json', null, '2016-07-26 10:36:08', null, '2016-06-22 18:01:12', '2016-07-26 10:36:08', '2016-06-22 18:15:50');
+INSERT INTO `gmails` VALUES ('9', 'haiphong.love09@gmail.com', '', '85207.json', null, '2016-07-28 02:53:55', null, '2016-06-22 18:03:41', '2016-07-28 02:53:55', null);
+INSERT INTO `gmails` VALUES ('10', 'hangnguyen.love09@gmail.com', '', '18684.json', null, '2016-07-28 03:12:39', null, '2016-06-22 18:07:24', '2016-07-28 03:12:39', null);
+INSERT INTO `gmails` VALUES ('11', 'huonggiang.love09@gmail.com', '', '56222.json', null, '2016-07-28 03:47:32', null, '2016-06-22 18:09:40', '2016-07-28 03:47:32', null);
+INSERT INTO `gmails` VALUES ('12', 'vinhan.love09@gmail.com', '', '34236.json', null, '2016-07-28 03:48:16', null, '2016-06-22 18:12:43', '2016-07-28 03:48:16', null);
+INSERT INTO `gmails` VALUES ('13', 'langson.love09@gmail.com', '', '23600.json', null, '2016-07-28 05:03:00', null, '2016-06-22 18:15:50', '2016-07-28 05:03:00', null);
+INSERT INTO `gmails` VALUES ('14', 'manhbk.love09@gmail.com', '', '64558.json', null, '2016-07-28 05:03:39', null, '2016-06-22 18:19:01', '2016-07-28 05:03:39', null);
+
+-- ----------------------------
+-- Table structure for links
+-- ----------------------------
+DROP TABLE IF EXISTS `links`;
+CREATE TABLE `links` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` text COLLATE utf8_unicode_ci,
+  `description` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of links
+-- ----------------------------
+INSERT INTO `links` VALUES ('1', 'http://giayluoigiarehcm.blogspot.com/2016/07/tuyen-bo-mua-adidas-giay-vans-vnxk-mong.html', null, null, '2016-07-28 09:22:18', '2016-07-28 09:22:18', null);
+INSERT INTO `links` VALUES ('2', 'http://giayconversechuck2hcm.blogspot.com/2016/07/tien-bo-vans-nhap-khau-thuot-tha-nhan.html', 'Tiến bộ vans nhập khẩu thướt tha nhân dân mua adidas', null, '2016-07-28 09:33:14', '2016-07-28 09:33:14', null);
+INSERT INTO `links` VALUES ('3', 'http://giayconversechuck2hcm.blogspot.com/2016/07/giay-vans-giay-aididas-nam-mong-muon.html', 'Giày vans giày aididas nam mong muốn làm đẹp vans đẹp', null, '2016-07-28 09:33:55', '2016-07-28 09:33:55', null);
 
 -- ----------------------------
 -- Table structure for migrations
@@ -223,6 +245,7 @@ INSERT INTO `migrations` VALUES ('2016_06_17_085853_create_gmails_table', '2');
 INSERT INTO `migrations` VALUES ('2016_06_17_090534_create_blogspots_table', '2');
 INSERT INTO `migrations` VALUES ('2016_07_02_111150_create_blogs_table', '3');
 INSERT INTO `migrations` VALUES ('2016_07_02_115425_create_blocks_table', '3');
+INSERT INTO `migrations` VALUES ('2016_07_28_091505_create_links_table', '4');
 
 -- ----------------------------
 -- Table structure for password_resets
