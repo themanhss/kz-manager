@@ -536,7 +536,7 @@ class GmailController extends Controller {
 			if($k<=30) {
 				if($k%2 == 1 && $k <= 25 ) {
 					//$main = str_replace('<span>','<span style=""><b>'.$lines[rand(0,count($lines)-1)].'</b> ',$main);
-					if($k < 8) {
+					if($k < 5) {
 						$main = str_replace('<span>','<span style=""><h2>'.$lines[rand(0,count($lines)-1)].'</h2> ',$main);
 					}
 					if(6 < $k &&  $k <=12) {
@@ -546,7 +546,7 @@ class GmailController extends Controller {
 						//$main = str_replace('<span>','<span style=""><h4>'.$lines[rand(0,count($lines)-1)].'</h4> ',$main);
 					}
 					if(15 < $k &&  $k <=19) {
-						$main = str_replace('<span>','<span style=""><h5>'.$lines[rand(0,count($lines)-1)].'</h5> ',$main);
+//						$main = str_replace('<span>','<span style=""><h5>'.$lines[rand(0,count($lines)-1)].'</h5> ',$main);
 					}
 					if(19 < $k &&  $k <=25) {
 						//$main = str_replace('<span>','<span style=""><h6>'.$lines[rand(0,count($lines)-1)].'</h6> ',$main);
