@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Module;
 use App\Models\Gmail as Gmail;
+use App\Models\Link as Link;
 
 class GmailController extends Controller {
 	/*
@@ -249,7 +250,6 @@ class GmailController extends Controller {
 
 		/*$se = \Session::all();
 		dd($se);*/
-
 		$this->client = new \Google_Client();
 		$this->client->setAccessType('offline');
 		$this->client->setApprovalPrompt('force');	
@@ -294,6 +294,8 @@ class GmailController extends Controller {
 			$title = $content['title'];
 			$main_content = $content['content'];
 
+
+
 			$blogid = $blog_id;
 
 			$url = 'https://www.googleapis.com/blogger/v3/blogs/'.$blogid.'/posts/';
@@ -304,6 +306,7 @@ class GmailController extends Controller {
 				'title' => $title,
 				'content' => $main_content
 			);
+
 
 			$data_string = json_encode($body);
 
@@ -317,20 +320,28 @@ class GmailController extends Controller {
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headerQuery);
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-			//curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
-			curl_exec($ch);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+			curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE);
 
-//			var_dump(curl_getinfo($ch,CURLINFO_HEADER_OUT));
-			//echo "<br><br><br>".$data;
-//			echo curl_errno($ch);
+			$data = curl_exec($ch);
 
-			//$response = json_decode($data);
+			// save url to Links table
+			if($data) {
+				$response = json_decode($data);
+				$url_response = $response->url;
+				$title_response = $response->title;
+
+				$url_save = new Link();
+				$url_save->url = $url_response;
+				$url_save->title = $title_response;
+				$url_save->save();
+			}
+			var_dump($url_response);
 
 			curl_close($ch);
-			//$gmail_id = 1;
-//			return redirect()->to('admin/gmails/'.$gmail_id.'/blogspots');
-
 
 		} else {
 			//$redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php';

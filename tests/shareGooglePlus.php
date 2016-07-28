@@ -6,12 +6,13 @@ use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 
-class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
+
+class shareGooglePlus extends Illuminate\Foundation\Testing\TestCase {
 
     /**
      * @var RemoteWebDriver
      */
-  protected $webDriver;
+    protected $webDriver;
 
   public function createApplication()
     {
@@ -35,50 +36,29 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
 
     public function tearDown()
     {
-       //$this->webDriver->quit();
+       $this->webDriver->quit();
     }
 
-    public function testPostBlogspot()
+    public function testAutoPlus()
     {
+        $links = App\Models\Link::where('created_at', '>=', Carbon::now()->subHours(24))->get();
+
         $gmails = App\Models\Gmail::all();
 
         foreach ($gmails as $key => $gmail) {
 
-            $url = 'http://kz-manager.com/admin/gmails/' . $gmail->id . '/blogspots';
+            /*Login to google*/
 
             if ($key > 0) {
-                $redirect_to = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=' . $url;
+                $redirect_to = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://accounts.google.com';
                 $this->webDriver->get($redirect_to);
             }else{
-                $this->webDriver->get($url);
+                $this->webDriver->get('https://accounts.google.com');
             }
 
-            if ($key == 0) {
-
-                $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
-                $username->sendKeys('1');
-
-                /*$this->webDriver->manage()->timeouts()->implicitlyWait(10);*/
-
-                $pw = $this->webDriver->findElement(WebDriverBy::id("Password"));
-                $pw->sendKeys("123456");
-
-                $signIn = $this->webDriver->findElement(WebDriverBy::id('submitBtn'));
-                $signIn->click();
-
-            }
-
-
-            sleep(3);
-
-            // click get token Btn
-            $getTocken = $this->webDriver->findElement(WebDriverBy::id('getTockenBtn'));
-            $getTocken->click();
-
-            // Dang nhap vao tai khoan khac tu lan thu 2
+            sleep(2);
 
             if($key == 1){
-
 
                 $this->webDriver->findElement(WebDriverBy::id('account-chooser-link'))->click();;
 
@@ -92,9 +72,6 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
 
                 $this->webDriver->findElement(WebDriverBy::id('account-chooser-add-account'))->click();
             }
-
-
-
 
             // auth google
             $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
@@ -120,23 +97,19 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
             }
 
 
-            sleep(2);
-            // click "Cho phep" btn
-            $this->webDriver->findElement(WebDriverBy::id('submit_approve_access'))->click();
+            // Share to google plus
+            foreach ($links as $key=>$link) {
 
+                $url = 'https://plus.google.com/share?url='.$link->url;
+                $this->webDriver->get($url);
 
-            sleep(2);
-
-            $this->webDriver->get($url);
-
-            sleep(2);
-
-            $this->webDriver->findElement(WebDriverBy::id('postAllBlog'))->click();
-
-    //            sleep(30);
-                sleep(5);
+                $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
+            }
+            // end foreach link
 
         }
+        // end foreach gmail
     }
+
 
 }

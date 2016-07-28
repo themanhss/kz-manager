@@ -5,11 +5,7 @@ use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 
-/**
- * Description of testAdminLogin
- *
- * @author linhnp
- */
+
 class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
 
     /**
@@ -39,7 +35,7 @@ class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
 
     public function tearDown()
     {
-       $this->webDriver->quit();
+//       $this->webDriver->quit();
     }
 
     public function testAutoPlus()
@@ -47,7 +43,6 @@ class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
 
         $links = App\Models\Link::all();
          
-
         foreach ($links as $key=>$link) {
 
         $url = 'https://plus.google.com/share?url='.$link->url;
@@ -64,7 +59,7 @@ class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
                $next = $this->webDriver->findElement(WebDriverBy::id('next'));
                if ($next->isDisplayed()) {
                    $next->click();
-                }
+               }
                
 
                  
@@ -84,9 +79,8 @@ class testGooglePlus extends Illuminate\Foundation\Testing\TestCase {
                      $signIn->click();
                   }
            }
-          /*end check $k=0*/
-           
 
+          /*end check $k=0*/
            $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
         }
 
