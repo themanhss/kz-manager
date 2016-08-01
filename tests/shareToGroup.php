@@ -77,7 +77,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
 
         sleep(2);
 
-        $url = 'https://plus.google.com/communities/117411021761954162058';
+        $url = 'https://plus.google.com/communities/117411021761954162058/stream/72b3558d-9457-4809-acbc-00e810e5fd08';
 
         $this->webDriver->get($url);
 
@@ -93,11 +93,15 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
 
         $this->webDriver->manage()->timeouts()->implicitlyWait(10);
         $post_content = $this->webDriver->findElement(WebDriverBy::className('fm'));
-        $post_content->sendKeys("http://kiza.vn/blog/");
+        $post_content->sendKeys("http://dantri.com.vn/");
 
         sleep(1);
         $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
-//        $this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys('Say something about this!');
+        $this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys('Say something about this!');
+
+        if($this->webDriver->manage()->window()->getSize()->getHeight() <= 800) {
+            $this->webDriver->executeScript("window.scrollTo(0, 300);", []);
+        }
 
         sleep(10);
         $this->webDriver->manage()->timeouts()->implicitlyWait(10);
