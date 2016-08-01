@@ -81,7 +81,11 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
 
         sleep(2);
 
+<<<<<<< HEAD
         foreach ($links as $link){
+=======
+        $url = 'https://plus.google.com/communities/117411021761954162058/stream/72b3558d-9457-4809-acbc-00e810e5fd08';
+>>>>>>> cae7b5b158f86104a55689268f6135579c30f285
 
             $communities = file(public_path().'/google-communities/communities.txt', FILE_IGNORE_NEW_LINES);
 
@@ -95,9 +99,23 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
                 array_push($coms, $communities[$rand_keys[$i]]);
             }
 
+<<<<<<< HEAD
             foreach ($coms as $k => $community) {
 
                 $url = $community;
+=======
+        $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+        $post_content = $this->webDriver->findElement(WebDriverBy::className('fm'));
+        $post_content->sendKeys("http://dantri.com.vn/");
+
+        sleep(1);
+        $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
+        $this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys('Say something about this!');
+
+        if($this->webDriver->manage()->window()->getSize()->getHeight() <= 800) {
+            $this->webDriver->executeScript("window.scrollTo(0, 300);", []);
+        }
+>>>>>>> cae7b5b158f86104a55689268f6135579c30f285
 
                 $this->webDriver->get($url);
 
