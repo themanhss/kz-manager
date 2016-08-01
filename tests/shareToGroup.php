@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Facebook\WebDriver\WebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -40,6 +41,9 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
 
     public function testShareToGroup()
     {
+//        $links = App\Models\Link::where('created_at', '>=', Carbon::now()->subHours(24))->get();
+        $links = App\Models\Link::all();
+
         $google_login = $redirect_to = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://accounts.google.com';
 
         $this->webDriver->get($google_login);
@@ -77,31 +81,58 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
 
         sleep(2);
 
-        $url = 'https://plus.google.com/communities/117411021761954162058';
+        foreach ($links as $link){
 
-        $this->webDriver->get($url);
+            $communities = file(public_path().'/google-communities/communities.txt', FILE_IGNORE_NEW_LINES);
 
 
-        // Put content to input
+            $number_communities = 5;
+            $rand_keys = array_rand($communities, $number_communities);
 
-        $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-        $this->webDriver->findElement(WebDriverBy::className('kqa'))->click();
-        sleep(2);
+            $coms = array();
 
-        $this->webDriver->findElement(WebDriverBy::className('hL'))->click();
-        sleep(2);
+            for ($i = 0; $i< $number_communities; $i++){
+                array_push($coms, $communities[$rand_keys[$i]]);
+            }
 
-        $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-        $post_content = $this->webDriver->findElement(WebDriverBy::className('fm'));
-        $post_content->sendKeys("http://kiza.vn/blog/");
+            foreach ($coms as $k => $community) {
 
-        sleep(1);
-        $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
-//        $this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys('Say something about this!');
+                $url = $community;
 
-        sleep(10);
-        $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-        $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
+                $this->webDriver->get($url);
+
+                // Put content to input
+
+                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                $this->webDriver->findElement(WebDriverBy::className('kqa'))->click();
+                sleep(2);
+
+                $this->webDriver->findElement(WebDriverBy::className('hL'))->click();
+                sleep(2);
+
+                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                $post_content = $this->webDriver->findElement(WebDriverBy::className('fm'));
+                $post_content->sendKeys($link->url);
+
+                sleep(1);
+                $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
+
+
+                $string = '+ + + Cùng nhau lên top nhé các bạn :) + + +  '.$link->title;
+
+
+                $this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys($string);
+
+//                if($this->webDriver->manage()->window()->getSize()->getHeight() <= 800) {
+                    $this->webDriver->executeScript("window.scrollTo(0, 300);", []);
+//                }
+
+                sleep(10);
+                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
+            }
+
+        }
     }
 
 
