@@ -1,0 +1,3 @@
+java -jar selenium-server-standalone-2.53.1.jar =Dwebdriver.chrome.driver="C:\kz-manager\ChromeDriverSelenium\chromedriver.exe"
+
+==> Java command line option -Dproperty=value sets a system property value as expected.

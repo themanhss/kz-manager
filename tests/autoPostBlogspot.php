@@ -35,7 +35,7 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
 
     public function tearDown()
     {
-       //$this->webDriver->quit();
+       $this->webDriver->quit();
     }
 
     public function testPostBlogspot()
@@ -54,6 +54,7 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
             }
 
             if ($key == 0) {
+                sleep(3);
 
                 $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
                 $username->sendKeys('1');

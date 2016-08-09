@@ -307,6 +307,7 @@ class GmailController extends Controller {
 				'content' => $main_content
 			);
 
+			
 
 			$data_string = json_encode($body);
 
@@ -339,7 +340,7 @@ class GmailController extends Controller {
 				$url_save->title = $title_response;
 				$url_save->save();
 			}
-			var_dump($url_response);
+			//var_dump($url_response);
 
 			curl_close($ch);
 
