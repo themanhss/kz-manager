@@ -455,7 +455,8 @@ class GmailController extends Controller {
 	public function mixContent($gmail_type){
 
 		//Get all img name
-		$array_images_name =  file(public_path().'/tool/pre/images-name.txt', FILE_IGNORE_NEW_LINES);
+//		$array_images_name =  file(public_path().'/tool/pre/images-name.txt', FILE_IGNORE_NEW_LINES);
+		$array_images_name =  file(public_path().'/tool/pre/images-girl.txt', FILE_IGNORE_NEW_LINES);
 
 		// Get Origin Content
 
