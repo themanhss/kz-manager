@@ -339,7 +339,7 @@ class GmailController extends Controller {
 				$url_save->title = $title_response;
 				$url_save->save();
 			}
-			var_dump($url_response);
+			//var_dump($url_response);
 
 			curl_close($ch);
 
@@ -390,7 +390,6 @@ class GmailController extends Controller {
 			$auth_url = $this->client->createAuthUrl();
 			return \Redirect::to($auth_url);
 		} else {
-			echo 3;die();
 			$this->client->authenticate($_GET['code']);
 			$_SESSION['access_token'] = $this->client->getAccessToken();
 			dd($_SESSION['access_token']);
