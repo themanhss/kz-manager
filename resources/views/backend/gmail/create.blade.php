@@ -25,6 +25,17 @@
                             <span class="text-danger">{{ $errors->first('gmail') }}</span>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="uploadDate">PW</label>
+
+                        <div class="col-md-6">
+                            <input id="pw" name="pw" type="text" class="form-control"
+                                   value="{{ old('pw') }}">
+                            <span class="text-danger">{{ $errors->first('pw') }}</span>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="uploadDate">Phone</label>
 
@@ -32,6 +43,17 @@
                             <input id="phone" name="phone" type="text" class="form-control"
                                    value="{{ old('phone') }}">
                             <span class="text-danger">{{ $errors->first('phone') }}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="uploadDate">Kiểu Hỗ Trợ</label>
+
+                        <div class="col-md-6">
+                            <select class="form-control" id="type" name="type">
+                                <option value="1">Hỗ trợ site chính</option>
+                                <option value="0">Hỗ trợ site vệ tinh</option>
+                            </select>
                         </div>
                     </div>
 
