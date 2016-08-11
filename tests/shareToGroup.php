@@ -61,21 +61,73 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
             for ($i = 0; $i< $number_communities; $i++){
                 array_push($coms, $communities[$rand_keys[$i]]);
             }
+
+            $captions = file(public_path().'/google-communities/caption.txt', FILE_IGNORE_NEW_LINES);
+
             foreach ($coms as $k => $community) {
                 $url = $community;
                 $this->webDriver->get($url);
                 // Put content to input
                 $this->webDriver->manage()->timeouts()->implicitlyWait(10);
                 $this->webDriver->findElement(WebDriverBy::className('kqa'))->click();
+
+                /* Share Image */
+                sleep(2);
+                $this->webDriver->findElement(WebDriverBy::className('JI'))->click();
+
+                sleep(1);
+                $this->webDriver->findElement(WebDriverBy::className('fya'))->click();
+
+                // Get rand img
+                $result= $this->webDriver->findElements(WebDriverBy::className('a-nf-e-nb'));
+                $count_result=count($result);
+
+                $rand_index =  rand (0 , $count_result );
+                $img_rand = 'a-nf-e-nb:nth-child('.$rand_index.')';
+
+                sleep(1);
+                $this->webDriver->findElement(WebDriverBy::className($img_rand))->click();
+
+                sleep(1);
+                $this->webDriver->findElement(WebDriverBy::className('a-Qb-e-D6'))->click();
+
+
+                sleep(1);
+                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                //$this->webDriver->findElement(WebDriverBy::className('a-Qb-e-D6:nth-child(2)'))->click();
+                $this->webDriver->findElement(WebDriverBy::id('picker:ap:2'))->click();
+
+                sleep(1);
+                $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
+
+                // get Rand Caption
+                $temp_keys = array_rand($captions, 1);
+                $caption = $captions[$temp_keys[0]];
+
+                $string = '$caption';
+
+                /*sleep(2);
+                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                $post_content = $this->webDriver->findElement(WebDriverBy::className('fm'));
+                $post_content->sendKeys($link->url);*/
+
+                /*
+                // Share link
                 sleep(2);
                 $this->webDriver->findElement(WebDriverBy::className('hL'))->click();
                 sleep(2);
                 $this->webDriver->manage()->timeouts()->implicitlyWait(10);
                 $post_content = $this->webDriver->findElement(WebDriverBy::className('fm'));
                 $post_content->sendKeys($link->url);
+
                 sleep(1);
                 $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
                 $string = '+ + + Cùng nhau lên top nhé các bạn :) + + +  '.$link->title;
+
+                */
+
+
+
                 $this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys($string);
 //                if($this->webDriver->manage()->window()->getSize()->getHeight() <= 800) {
                 $this->webDriver->executeScript("window.scrollTo(0, 300);", []);
