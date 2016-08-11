@@ -111,7 +111,7 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
 
             $pw = $this->webDriver->findElement(WebDriverBy::id("Passwd"));
             $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-            $pw->sendKeys("themanh2311");
+            $pw->sendKeys($gmail->pw);
 
 
             $signIn = $this->webDriver->findElement(WebDriverBy::id('signIn'));

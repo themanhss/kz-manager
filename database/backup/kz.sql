@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : local
-Source Server Version : 50621
+Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : kz
 
 Target Server Type    : MYSQL
-Target Server Version : 50621
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-07-28 17:11:20
+Date: 2016-08-10 01:31:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -81,7 +81,7 @@ CREATE TABLE `blogspots` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of blogspots
@@ -170,6 +170,18 @@ INSERT INTO `blogspots` VALUES ('85', 'http://giaythethaonamdepgiare.blogspot.co
 INSERT INTO `blogspots` VALUES ('86', 'http://giaydepgiarehanoi.blogspot.com/', '4928501464423677811', '14', '', null, '2016-06-22 18:20:05', '2016-06-22 18:20:05', null);
 INSERT INTO `blogspots` VALUES ('87', 'http://giayluoithethao.blogspot.com/', '1985440465480241011', '14', '', null, '2016-06-22 18:20:15', '2016-06-22 18:20:15', null);
 INSERT INTO `blogspots` VALUES ('88', 'http://giayluoigiarehcm.blogspot.com/', '5385845689403641427', '14', '', null, '2016-06-22 18:20:25', '2016-06-22 18:20:25', null);
+INSERT INTO `blogspots` VALUES ('89', 'http://muagiaynikehcm.blogspot.sg/', '5962644739751344743', '10', '', null, '2016-08-09 17:37:59', '2016-08-09 17:37:59', null);
+INSERT INTO `blogspots` VALUES ('90', 'http://muagiaadidasvn.blogspot.sg/', '264224868183260920', '10', '', null, '2016-08-09 17:38:13', '2016-08-09 17:38:13', null);
+INSERT INTO `blogspots` VALUES ('91', 'http://giayconversevn09.blogspot.com/', '1030337920144303457', '10', '', null, '2016-08-09 17:41:18', '2016-08-09 17:41:18', null);
+INSERT INTO `blogspots` VALUES ('92', 'http://giayvansdephanoi.blogspot.com/', '8460745376018775486', '10', '', null, '2016-08-09 17:41:38', '2016-08-09 17:41:38', null);
+INSERT INTO `blogspots` VALUES ('93', 'http://giaythethaodep2017.blogspot.com/', '8166991692257617183', '13', '', null, '2016-08-09 17:42:13', '2016-08-09 17:42:13', null);
+INSERT INTO `blogspots` VALUES ('94', 'http://giayvaimuahe.blogspot.com/', '9203550589475736881', '13', '', null, '2016-08-09 17:42:20', '2016-08-09 17:42:20', null);
+INSERT INTO `blogspots` VALUES ('95', 'http://giaydanamgiare2017.blogspot.com/', '107711694543641447', '13', '', null, '2016-08-09 17:42:29', '2016-08-09 17:42:29', null);
+INSERT INTO `blogspots` VALUES ('96', 'http://donugiare.blogspot.com/', '2498008965565138483', '13', '', null, '2016-08-09 17:42:38', '2016-08-09 17:42:38', null);
+INSERT INTO `blogspots` VALUES ('97', 'http://muagiaynikethethaovn.blogspot.com/', '3649647946192843075', '14', '', null, '2016-08-09 17:43:08', '2016-08-09 17:43:08', null);
+INSERT INTO `blogspots` VALUES ('98', 'http://giayvanschinhhang01.blogspot.com/', '1071290832491912992', '14', '', null, '2016-08-09 17:43:15', '2016-08-09 17:43:15', null);
+INSERT INTO `blogspots` VALUES ('99', 'http://muagiayconversedep.blogspot.com/', '9036394393697951359', '14', '', null, '2016-08-09 17:43:23', '2016-08-09 17:43:23', null);
+INSERT INTO `blogspots` VALUES ('100', 'http://giayadidasgiarevn.blogspot.com/', '6062908676698079028', '14', '', null, '2016-08-09 17:43:30', '2016-08-09 17:43:30', null);
 
 -- ----------------------------
 -- Table structure for gmails
@@ -180,6 +192,8 @@ CREATE TABLE `gmails` (
   `gmail` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `client_key` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pw` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `type` int(11) NOT NULL DEFAULT '1',
   `email_backup` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_run` timestamp NULL DEFAULT NULL,
   `description` text COLLATE utf8_unicode_ci,
@@ -187,23 +201,23 @@ CREATE TABLE `gmails` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of gmails
 -- ----------------------------
-INSERT INTO `gmails` VALUES ('1', 'themanhss@gmail.com', null, '29972.json', null, '2016-07-28 04:02:46', null, '0000-00-00 00:00:00', '2016-07-28 04:02:46', '2016-06-22 18:15:50');
-INSERT INTO `gmails` VALUES ('2', 'iag.dev2016@gmail.com', '', '62692.json', null, '2016-07-28 03:57:41', null, '0000-00-00 00:00:00', '2016-07-28 03:57:41', null);
-INSERT INTO `gmails` VALUES ('3', 'theman2311@gmail.com', '968332556', '57592.json', null, '2016-07-12 17:04:36', null, '2016-06-19 03:59:21', '2016-07-12 17:04:36', '2016-06-22 18:15:50');
-INSERT INTO `gmails` VALUES ('6', 'vinhbao.love09@gmail.com', '', '19669.json', null, '2016-07-28 05:02:17', null, '2016-06-20 17:57:03', '2016-07-28 05:02:17', null);
-INSERT INTO `gmails` VALUES ('7', 'kiza.vn@gmail.com', '', '52631.json', null, '2016-07-12 17:15:05', null, '2016-06-22 17:28:09', '2016-07-12 17:15:05', '2016-06-22 18:15:50');
-INSERT INTO `gmails` VALUES ('8', 'daokimdung201192@gmail.com', '', '60940.json', null, '2016-07-26 10:36:08', null, '2016-06-22 18:01:12', '2016-07-26 10:36:08', '2016-06-22 18:15:50');
-INSERT INTO `gmails` VALUES ('9', 'haiphong.love09@gmail.com', '', '85207.json', null, '2016-07-28 02:53:55', null, '2016-06-22 18:03:41', '2016-07-28 02:53:55', null);
-INSERT INTO `gmails` VALUES ('10', 'hangnguyen.love09@gmail.com', '', '18684.json', null, '2016-07-28 03:12:39', null, '2016-06-22 18:07:24', '2016-07-28 03:12:39', null);
-INSERT INTO `gmails` VALUES ('11', 'huonggiang.love09@gmail.com', '', '56222.json', null, '2016-07-28 03:47:32', null, '2016-06-22 18:09:40', '2016-07-28 03:47:32', null);
-INSERT INTO `gmails` VALUES ('12', 'vinhan.love09@gmail.com', '', '34236.json', null, '2016-07-28 03:48:16', null, '2016-06-22 18:12:43', '2016-07-28 03:48:16', null);
-INSERT INTO `gmails` VALUES ('13', 'langson.love09@gmail.com', '', '23600.json', null, '2016-07-28 05:03:00', null, '2016-06-22 18:15:50', '2016-07-28 05:03:00', null);
-INSERT INTO `gmails` VALUES ('14', 'manhbk.love09@gmail.com', '', '64558.json', null, '2016-07-28 05:03:39', null, '2016-06-22 18:19:01', '2016-07-28 05:03:39', null);
+INSERT INTO `gmails` VALUES ('1', 'themanhss@gmail.com', null, '29972.json', 'themanh2311', '1', null, '2016-07-28 04:02:46', null, '0000-00-00 00:00:00', '2016-07-28 04:02:46', null);
+INSERT INTO `gmails` VALUES ('2', 'iag.dev2016@gmail.com', null, '62692.json', 'themanh2311', '1', null, '2016-07-28 03:57:41', null, '0000-00-00 00:00:00', '2016-07-28 03:57:41', null);
+INSERT INTO `gmails` VALUES ('3', 'theman2311@gmail.com', null, '57592.json', '', '1', null, '2016-07-12 17:04:36', null, '2016-06-19 03:59:21', '2016-07-12 17:04:36', '2016-06-22 18:15:50');
+INSERT INTO `gmails` VALUES ('6', 'vinhbao.love09@gmail.com', null, '19669.json', 'themanh2311', '1', null, '2016-07-28 05:02:17', null, '2016-06-20 17:57:03', '2016-07-28 05:02:17', null);
+INSERT INTO `gmails` VALUES ('7', 'kiza.vn@gmail.com', null, '52631.json', '', '1', null, '2016-07-12 17:15:05', null, '2016-06-22 17:28:09', '2016-07-12 17:15:05', '2016-06-22 18:15:50');
+INSERT INTO `gmails` VALUES ('8', 'daokimdung201192@gmail.com', '', '60940.json', 'manhyeudung', '1', null, '2016-07-26 10:36:08', null, '2016-06-22 18:01:12', '2016-07-26 10:36:08', null);
+INSERT INTO `gmails` VALUES ('9', 'haiphong.love09@gmail.com', '', '85207.json', 'themanh2311', '1', null, '2016-07-28 02:53:55', null, '2016-06-22 18:03:41', '2016-07-28 02:53:55', null);
+INSERT INTO `gmails` VALUES ('10', 'hangnguyen.love09@gmail.com', '', '18684.json', 'themanh2311', '1', null, '2016-07-28 03:12:39', null, '2016-06-22 18:07:24', '2016-07-28 03:12:39', null);
+INSERT INTO `gmails` VALUES ('11', 'huonggiang.love09@gmail.com', '', '56222.json', 'themanh2311', '1', null, '2016-07-28 03:47:32', null, '2016-06-22 18:09:40', '2016-07-28 03:47:32', null);
+INSERT INTO `gmails` VALUES ('12', 'vinhan.love09@gmail.com', '', '34236.json', 'themanh2311', '1', null, '2016-07-28 03:48:16', null, '2016-06-22 18:12:43', '2016-07-28 03:48:16', null);
+INSERT INTO `gmails` VALUES ('13', 'langson.love09@gmail.com', '', '23600.json', 'themanh2311', '1', null, '2016-07-28 05:03:00', null, '2016-06-22 18:15:50', '2016-07-28 05:03:00', null);
+INSERT INTO `gmails` VALUES ('14', 'manhbk.love09@gmail.com', '', '64558.json', 'themanh2311', '1', null, '2016-07-28 05:03:39', null, '2016-06-22 18:19:01', '2016-07-28 05:03:39', null);
 
 -- ----------------------------
 -- Table structure for links
@@ -218,7 +232,7 @@ CREATE TABLE `links` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of links
@@ -226,6 +240,18 @@ CREATE TABLE `links` (
 INSERT INTO `links` VALUES ('1', 'http://giayluoigiarehcm.blogspot.com/2016/07/tuyen-bo-mua-adidas-giay-vans-vnxk-mong.html', null, null, '2016-07-28 09:22:18', '2016-07-28 09:22:18', null);
 INSERT INTO `links` VALUES ('2', 'http://giayconversechuck2hcm.blogspot.com/2016/07/tien-bo-vans-nhap-khau-thuot-tha-nhan.html', 'Tiến bộ vans nhập khẩu thướt tha nhân dân mua adidas', null, '2016-07-28 09:33:14', '2016-07-28 09:33:14', null);
 INSERT INTO `links` VALUES ('3', 'http://giayconversechuck2hcm.blogspot.com/2016/07/giay-vans-giay-aididas-nam-mong-muon.html', 'Giày vans giày aididas nam mong muốn làm đẹp vans đẹp', null, '2016-07-28 09:33:55', '2016-07-28 09:33:55', null);
+INSERT INTO `links` VALUES ('4', 'http://giayadidasthethao.blogspot.com/2016/08/chau-binh-chon-nhan-su-thu-ky-e-nghi.html', 'Châu Á bình chọn nhân sự thư ký đề nghị', null, '2016-08-09 13:56:23', '2016-08-09 13:56:23', null);
+INSERT INTO `links` VALUES ('5', 'http://giayadidasthethao.blogspot.com/2016/08/ieu-le-hop-phap-adidas-nam-converse.html', 'điều lệ hợp pháp adidas nam converse Đà Nẵng lộng lẫy', null, '2016-08-09 13:57:05', '2016-08-09 13:57:05', null);
+INSERT INTO `links` VALUES ('6', 'http://giayadidasthethao.blogspot.com/2016/08/converse-vnxk-converse-chinh-hang-hien.html', 'Converse vnxk converse chính hãng thể hiện lộng lẫy mua vans Huế', null, '2016-08-09 13:57:24', '2016-08-09 13:57:24', null);
+INSERT INTO `links` VALUES ('7', 'http://giaythethaohcmdep.blogspot.com/2016/08/converse-mau-ghi-mua-adidas-thoi-trang.html', 'Converse màu ghi mua adidas thời trang bán giày nike khoe sắc', null, '2016-08-09 17:18:32', '2016-08-09 17:18:32', null);
+INSERT INTO `links` VALUES ('8', 'http://muagiaydanamhanoi.blogspot.com/2016/08/converes-giam-gia-chinh-nghia-nu-tinh.html', 'Converes giảm giá chính nghĩa nữ tính giày nike rẻ khỏe mạnh', null, '2016-08-09 17:18:35', '2016-08-09 17:18:35', null);
+INSERT INTO `links` VALUES ('9', 'http://giayadidasvietnam.blogspot.com/2016/08/nhan-inh-lien-lac-giay-nike-nu-chinh.html', 'Nhận định liên lạc giày nike nữ chính thức giày nhập khẩu', null, '2016-08-09 17:18:38', '2016-08-09 17:18:38', null);
+INSERT INTO `links` VALUES ('10', 'http://giaynikevietnam.blogspot.com/2016/08/thoi-trang-trien-khai-giay-vans-nike-nu.html', 'Thời trang triển khai giày vans nike nữ giày converse', null, '2016-08-09 17:18:41', '2016-08-09 17:18:41', null);
+INSERT INTO `links` VALUES ('11', 'http://giaythethaonamgiarehanoi.blogspot.com/2016/08/phan-tich-nhac-si-vnxk-giam-gia-giay.html', 'Phân tích nhạc sĩ vnxk giảm giá giày nike chính hãng adidas fake', null, '2016-08-09 17:18:45', '2016-08-09 17:18:45', null);
+INSERT INTO `links` VALUES ('12', 'http://giaythethaonuhanoi.blogspot.com/2016/08/converse-gia-re-converes-giam-gia-giay.html', 'Converse giá rẻ converes giảm giá giày đẹp converse vnxk giày cầu giấy', null, '2016-08-09 17:18:48', '2016-08-09 17:18:48', null);
+INSERT INTO `links` VALUES ('13', 'http://giaydanamdephanoi.blogspot.com/2016/08/vans-ha-tinh-ieu-kien-giay-nike-chinh.html', 'Vans Hà Tĩnh điều kiện giày nike chính hãng thấp cổ giày vans vnxk', null, '2016-08-09 17:18:51', '2016-08-09 17:18:51', null);
+INSERT INTO `links` VALUES ('14', 'http://giaythethaohcmgiare.blogspot.com/2016/08/adidas-gia-re-ban-giay-nike-converse.html', 'Adidas giá rẻ bán giày nike converse vnxk thời trang xanh đỏ', null, '2016-08-09 17:18:54', '2016-08-09 17:18:54', null);
+INSERT INTO `links` VALUES ('15', 'http://muagiaynuthethao.blogspot.com/2016/08/ieu-kien-xanh-o-hoc-si-chiem-nguong.html', 'điều kiện xanh đỏ học sĩ chiêm ngưỡng giày nike xuất khẩu', null, '2016-08-09 17:18:58', '2016-08-09 17:18:58', null);
 
 -- ----------------------------
 -- Table structure for migrations

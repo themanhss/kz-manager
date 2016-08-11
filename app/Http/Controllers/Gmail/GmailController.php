@@ -56,9 +56,11 @@ class GmailController extends Controller {
 
 			$datas = $request->all();
 
+
 			/*Validation form*/
 			$validator = Validator::make($request->all(), [
-				'gmail' => 'required'
+				'gmail' => 'required',
+				'pw' => 'required',
 			]);
 
 			if ($validator->fails()) {
@@ -91,6 +93,8 @@ class GmailController extends Controller {
 
 			$gmail->gmail = $datas['gmail'];
 			$gmail->phone = $datas['phone'];
+			$gmail->pw = $datas['pw'];
+			$gmail->type = $datas['type'];
 
 			$gmail->client_key = $datas['client_key'];
 
@@ -119,7 +123,8 @@ class GmailController extends Controller {
 
 			/*Validation form*/
 			$validator = Validator::make($request->all(), [
-				'gmail' => 'required'
+				'gmail' => 'required',
+				'pw' => 'required'
 			]);
 
 			if ($validator->fails()) {
@@ -152,6 +157,8 @@ class GmailController extends Controller {
 
 			$gmail->gmail = $datas['gmail'];
 			$gmail->phone = $datas['phone'];
+			$gmail->pw = $datas['pw'];
+			$gmail->type = $datas['type'];
 
 			if($datas['client_key']){
 				$gmail->client_key = $datas['client_key'];
@@ -286,11 +293,10 @@ class GmailController extends Controller {
 			}
 
 
-			//var_dump($accessToken);die();
 
-			//$blogid = '5032988436021182927';
 
-			$content = $this->mixContent();
+			// Pass Gmail Type to get Content Post
+			$content = $this->mixContent($gmail->type);
 			$title = $content['title'];
 			$main_content = $content['content'];
 
@@ -339,7 +345,7 @@ class GmailController extends Controller {
 				$url_save->title = $title_response;
 				$url_save->save();
 			}
-			var_dump($url_response);
+			//var_dump($url_response);
 
 			curl_close($ch);
 
@@ -390,7 +396,6 @@ class GmailController extends Controller {
 			$auth_url = $this->client->createAuthUrl();
 			return \Redirect::to($auth_url);
 		} else {
-			echo 3;die();
 			$this->client->authenticate($_GET['code']);
 			$_SESSION['access_token'] = $this->client->getAccessToken();
 			dd($_SESSION['access_token']);
@@ -445,13 +450,19 @@ class GmailController extends Controller {
 	 * @return : {$title, $content}
 	 * */
 
-	public function mixContent(){
+	// $gmail_type = 1 : support site chinh
+	// $gmail_type = 0 : support site ve tinh
+	public function mixContent($gmail_type){
 
 		//Get all img name
-		$array_images_name =  file(public_path().'/tool/pre/images-name.txt', FILE_IGNORE_NEW_LINES);
+//		$array_images_name =  file(public_path().'/tool/pre/images-name.txt', FILE_IGNORE_NEW_LINES);
+		$array_images_name =  file(public_path().'/tool/pre/images-girl.txt', FILE_IGNORE_NEW_LINES);
 
 		// Get Origin Content
+
 		$main_data = file_get_contents(public_path().'/tool/pre/data.txt');
+
+
 
 		/*get one phrase to insert title*/
 		$one_string = file(public_path().'/tool/pre/title.txt', FILE_IGNORE_NEW_LINES);
@@ -511,7 +522,12 @@ class GmailController extends Controller {
 		};
 
 		/*Insert keyword to content*/
-		$lines = file(public_path().'/tool/pre/keyword.txt', FILE_IGNORE_NEW_LINES);
+		if($gmail_type == 1) {
+			$lines = file(public_path().'/tool/pre/keyword.txt', FILE_IGNORE_NEW_LINES);
+		}else{
+			$lines = file(public_path().'/tool/pre/link_ve_tinh.txt', FILE_IGNORE_NEW_LINES);
+		}
+
 		for($i = 0 ; $i < 10; $i++){
 			$index = rand(0,count($lines)-1);
 		}
