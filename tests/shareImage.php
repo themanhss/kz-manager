@@ -33,7 +33,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
         sleep(2);
         $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
         if ($username->isDisplayed()) {
-            $username->sendKeys('themanhss');
+            $username->sendKeys('gialam.love08@gmail.com');
         }
         $next = $this->webDriver->findElement(WebDriverBy::id('next'));
         if ($next->isDisplayed()) {
