@@ -23,7 +23,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
     }
     public function tearDown()
     {
-//       $this->webDriver->quit();
+       $this->webDriver->quit();
     }
     public function testShareToGroup()
     {
@@ -33,7 +33,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
         sleep(2);
         $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
         if ($username->isDisplayed()) {
-            $username->sendKeys('themanhss');
+            $username->sendKeys('gialam.love08@gmail.com');
         }
         $next = $this->webDriver->findElement(WebDriverBy::id('next'));
         if ($next->isDisplayed()) {
@@ -54,7 +54,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
         sleep(2);
 
         $communities = file(public_path().'/google-communities/communities.txt', FILE_IGNORE_NEW_LINES);
-        $number_communities = 5;
+        $number_communities = 2;
         $rand_keys = array_rand($communities, $number_communities);
         $coms = array();
         for ($i = 0; $i< $number_communities; $i++){
