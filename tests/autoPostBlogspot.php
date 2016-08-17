@@ -40,7 +40,7 @@ class autoPostBlogspot extends Illuminate\Foundation\Testing\TestCase {
 
     public function testPostBlogspot()
     {
-        $gmails = App\Models\Gmail::all();
+        $gmails = App\Models\Gmail::where('type',1)->get();
 
         foreach ($gmails as $key => $gmail) {
 
