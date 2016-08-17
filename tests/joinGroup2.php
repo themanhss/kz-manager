@@ -39,7 +39,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
             // auth google
             $username = $this->webDriver->findElement(WebDriverBy::id('Email'));
             if ($username->isDisplayed()) {
-                $username->sendKeys('hoaiduc.love09@gmail.com');
+                $username->sendKeys('longbien.love09@gmail.com');
             }
 
             $this->webDriver->manage()->timeouts()->implicitlyWait(5);
