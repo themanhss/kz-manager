@@ -77,46 +77,53 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
                 $this->webDriver->get($url);
                 // Put content to input
                 $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-                $this->webDriver->findElement(WebDriverBy::className('kqa'))->click();
 
-                /* Share Image */
-                sleep(2);
-                $this->webDriver->findElement(WebDriverBy::className('JI'))->click();
+                if (count( $this->webDriver->findElements(WebDriverBy::className('kqa') )) != 0) {
+                    
+                        $this->webDriver->findElement(WebDriverBy::className('kqa'))->click();
 
-                sleep(1);
-                $this->webDriver->findElement(WebDriverBy::className('fya'))->click();
+                        /* Share Image */
+                        sleep(2);
+                        $this->webDriver->findElement(WebDriverBy::className('JI'))->click();
 
-                // Get rand img
-                $result= $this->webDriver->findElements(WebDriverBy::className('a-nf-e-nb'));
-                $count_result=count($result);
+                        sleep(1);
+                        $this->webDriver->findElement(WebDriverBy::className('fya'))->click();
 
-                $rand_index =  rand (0 , $count_result );
-                $img_rand = 'a-nf-e-nb:nth-child('.$rand_index.')';
+                        // Get rand img
+                        $result= $this->webDriver->findElements(WebDriverBy::className('a-nf-e-nb'));
+                        $count_result=count($result);
 
-                sleep(1);
-                $this->webDriver->findElement(WebDriverBy::className($img_rand))->click();
-                sleep(3);
-                $this->webDriver->findElement(WebDriverBy::className('a-Qb-e-D6'))->click();
+                        $rand_index =  rand (0 , $count_result );
+                        $img_rand = 'a-nf-e-nb:nth-child('.$rand_index.')';
+
+                        sleep(1);
+                        $this->webDriver->findElement(WebDriverBy::className($img_rand))->click();
+                        sleep(3);
+                        $this->webDriver->findElement(WebDriverBy::className('a-Qb-e-D6'))->click();
 
 
-                sleep(1);
-                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-                sleep(3);
-                $this->webDriver->findElement(WebDriverBy::id('picker:ap:2'))->click();
+                        sleep(1);
+                        $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                        sleep(3);
+                        $this->webDriver->findElement(WebDriverBy::id('picker:ap:2'))->click();
 
-                sleep(1);
-                $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
+                        sleep(1);
+                        $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
 
-                // get Rand Caption
-                //$caption = $captions[rand(0, count($captions))];
+                        // get Rand Caption
+                        //$caption = $captions[rand(0, count($captions))];
 
-                //$this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys($caption);
-                $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
-                $this->webDriver->executeScript("window.scrollTo(0, 300);", []);
+                        //$this->webDriver->findElement(WebDriverBy::className('editable'))->sendKeys($caption);
+                        $this->webDriver->findElement(WebDriverBy::className('editable'))->click();
+                        $this->webDriver->executeScript("window.scrollTo(0, 300);", []);
 
-                sleep(3);
-                $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-                $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
+                        sleep(3);
+                        $this->webDriver->manage()->timeouts()->implicitlyWait(10);
+                        $this->webDriver->findElement(WebDriverBy::className('b-c-Ba'))->click();
+                    
+                }
+
+                
             }
 
         }
