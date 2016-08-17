@@ -313,6 +313,7 @@ class GmailController extends Controller {
 				'content' => $main_content
 			);
 
+			
 
 			$data_string = json_encode($body);
 
