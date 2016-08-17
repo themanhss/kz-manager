@@ -65,6 +65,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
             //$captions = file(public_path().'/google-communities/captions.txt', FILE_IGNORE_NEW_LINES);
 
             $this->webDriver->get('https://plus.google.com/');
+            sleep(3);
             // Put content to input
             $this->webDriver->manage()->timeouts()->implicitlyWait(10);
             $this->webDriver->findElement(WebDriverBy::className('kqa'))->click();
@@ -73,7 +74,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
             sleep(2);
             $this->webDriver->findElement(WebDriverBy::className('JI'))->click();
 
-            sleep(1);
+            sleep(2);
             $this->webDriver->findElement(WebDriverBy::className('fya'))->click();
 
             // Get rand img
