@@ -28,7 +28,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
     public function testJoinGroup()
     {
         $gmails = App\Models\Gmail::where('type',0)->get();
-        $communities = file(public_path().'/google-communities/communities.txt', FILE_IGNORE_NEW_LINES);
+        $communities = file(public_path().'/google-communities/communities1.txt', FILE_IGNORE_NEW_LINES);
 
         foreach ($gmails as $key => $gmail) {
             $redirect_to = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://accounts.google.com';
