@@ -65,7 +65,7 @@ class shareToGroup extends Illuminate\Foundation\Testing\TestCase {
                 sleep(1);
                 if (count( $this->webDriver->findElements(WebDriverBy::className('XCc') )) != 0) {
                     $this->webDriver->findElement(WebDriverBy::className('XCc'))->click();
-                    sleep(1);
+                    sleep(2);
                 }
             }
         }
