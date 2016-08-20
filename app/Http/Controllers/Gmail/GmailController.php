@@ -299,6 +299,7 @@ class GmailController extends Controller {
 			$content = $this->mixContent($gmail->type);
 			$title = $content['title'];
 			$main_content = $content['content'];
+			$labels = $content['labels'];
 
 
 
@@ -311,9 +312,10 @@ class GmailController extends Controller {
 				'blog' => array('id' => $blogid),
 				'title' => $title,
 				'content' => $main_content,
-				'labels'=> ['giày thể thao', 'giày converse đẹp', 'giày giá rẻ']
+				'labels'=> $labels
 			);
 
+			
 
 			$data_string = json_encode($body);
 
@@ -458,6 +460,18 @@ class GmailController extends Controller {
 		//Get all img name
 //		$array_images_name =  file(public_path().'/tool/pre/images-name.txt', FILE_IGNORE_NEW_LINES);
 		$array_images_name =  file(public_path().'/tool/pre/images-girl.txt', FILE_IGNORE_NEW_LINES);
+
+		$array_labels =  file(public_path().'/tool/pre/labels.txt', FILE_IGNORE_NEW_LINES);
+
+		$labels = [];
+
+		$rand_keys = array_rand($array_labels, 5);
+		array_push($labels, $array_labels[$rand_keys[0]]);
+		array_push($labels, $array_labels[$rand_keys[1]]);
+		array_push($labels, $array_labels[$rand_keys[2]]);
+		array_push($labels, $array_labels[$rand_keys[3]]);
+		array_push($labels, $array_labels[$rand_keys[4]]);
+
 
 		// Get Origin Content
 
@@ -609,6 +623,7 @@ class GmailController extends Controller {
 		$result_return = array(
 			"title" => $new_title_data,
 			"content" => $result,
+			"labels" => $labels
 		);
 
 		return $result_return;
