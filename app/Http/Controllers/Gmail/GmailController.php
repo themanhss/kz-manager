@@ -310,7 +310,8 @@ class GmailController extends Controller {
 				'kind' => 'blogger#post',
 				'blog' => array('id' => $blogid),
 				'title' => $title,
-				'content' => $main_content
+				'content' => $main_content,
+				'labels'=> ['giày thể thao', 'giày converse đẹp', 'giày giá rẻ']
 			);
 
 
